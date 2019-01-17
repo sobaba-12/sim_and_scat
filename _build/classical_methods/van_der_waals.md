@@ -180,7 +180,7 @@ plt.show()
 
 There is a small but clear difference between the two potential energy functions, this may be due to the different potential model or due to the [parameterisation](02_episode.ipynb) of that model.
 
-## Important!
+## Important
 
 These are just two of many potentials for modelling of the van der Waals interation. Furthermore, the parameters used in the model are just one example of the many possible parameterisations of the argon-argon interaction. 
 

@@ -2,10 +2,10 @@
 redirect_from:
   - "/important-considerations/pbc"
 interact_link: content/important_considerations/pbc.ipynb
-title: 'Solution'
+title: 'Periodic boundary conditions'
 prev_page:
   url: /important_considerations/cut_off
-  title: 'Exercise'
+  title: 'Cut-offs'
 next_page:
   url: /using_pylj/intro
   title: 'Using pylj'

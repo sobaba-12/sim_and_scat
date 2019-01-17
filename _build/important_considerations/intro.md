@@ -8,7 +8,7 @@ prev_page:
   title: 'Solution'
 next_page:
   url: /important_considerations/ensembles
-  title: 'Build an MD simulation'
+  title: 'Ensembles'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

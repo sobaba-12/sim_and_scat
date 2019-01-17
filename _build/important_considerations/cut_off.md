@@ -2,13 +2,13 @@
 redirect_from:
   - "/important-considerations/cut-off"
 interact_link: content/important_considerations/cut_off.ipynb
-title: 'Exercise'
+title: 'Cut-offs'
 prev_page:
   url: /important_considerations/ensembles
-  title: 'Build an MD simulation'
+  title: 'Ensembles'
 next_page:
   url: /important_considerations/pbc
-  title: 'Solution'
+  title: 'Periodic boundary conditions'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

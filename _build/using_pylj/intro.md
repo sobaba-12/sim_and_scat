@@ -5,7 +5,7 @@ interact_link: content/using_pylj/intro.ipynb
 title: 'Using pylj'
 prev_page:
   url: /important_considerations/pbc
-  title: 'Solution'
+  title: 'Periodic boundary conditions'
 next_page:
   url: /calculating_scattering/intro
   title: 'Calculating scattering'

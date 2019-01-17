@@ -62,13 +62,13 @@
   not_numbered: true
   expand_sections: true
   sections:
-  - title: Build an MD simulation
+  - title: Ensembles
     url: /important_considerations/ensembles
     not_numbered: true
-  - title: Exercise
+  - title: Cut-offs
     url: /important_considerations/cut_off
     not_numbered: true
-  - title: Solution
+  - title: Periodic boundary conditions
     url: /important_considerations/pbc
     not_numbered: true
 

@@ -43,6 +43,11 @@ The following people contributed substantially to the resource:
 - [Stephen C. Parker](https://orcid.org/0000-0003-3804-0975)
 - [Karen J. Edler](https://orcid.org/0000-0001-5822-0127)
 
+## Acknowledgements
+
+A. R. M. is grateful to the University of Bath and Diamond Light Source for co-funding a studentship (Studentship No. STU0149).
+B. J. M. acknowledges support from the Royal Society (Grant No. UF130329).
+
 ## References
 
 1. Karplus, M.; McCammon, J. A. *Nat. Struct. Biol.* 2002, **9** (9), 7. [10.1038/nsb0902-646](https://doi.org/10.1038/nsb0902-646).

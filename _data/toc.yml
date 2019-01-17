@@ -50,11 +50,8 @@
   - title: Build an MD simulation
     url: /molecular_dynamics/build_an_md
     not_numbered: true
-  - title: Exercise
+  - title: Kaboom!
     url: /molecular_dynamics/exercise
-    not_numbered: true
-  - title: Solution
-    url: /molecular_dynamics/solution
     not_numbered: true
 
 - title: Important considerations

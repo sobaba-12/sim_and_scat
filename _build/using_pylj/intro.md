@@ -14,15 +14,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 # Using pylj
 
-## Overview
-
-**Questions**
-- What is pylj, and how do I use it?
-
-**Objectives**
-- Understand how to build a molecular dynamics simulation using pylj
-- Gain a familiarity with the extensible `Sampling` classes of pylj
-
 ## pylj
 
 pylj is an open-source tool for **enabling interaction between students** (the user of this tutorials) and molecular dynamics simulations [1]. 

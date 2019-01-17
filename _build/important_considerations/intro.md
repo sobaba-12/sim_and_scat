@@ -4,8 +4,8 @@ redirect_from:
 interact_link: content/important_considerations/intro.ipynb
 title: 'Important considerations'
 prev_page:
-  url: /molecular_dynamics/solution
-  title: 'Solution'
+  url: /molecular_dynamics/exercise
+  title: 'Kaboom!'
 next_page:
   url: /important_considerations/ensembles
   title: 'Ensembles'

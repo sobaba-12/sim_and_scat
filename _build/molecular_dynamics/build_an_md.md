@@ -8,7 +8,7 @@ prev_page:
   title: 'Molecular dynamics'
 next_page:
   url: /molecular_dynamics/exercise
-  title: 'Exercise'
+  title: 'Kaboom!'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

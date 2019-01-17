@@ -15,19 +15,8 @@
 #   in the sidebar. All other values are ignored.
 
 - title: Home
-  url: /intro/intro
+  url: /intro
   not_numbered: true
-  expand_sections: true
-  sections:
-  - title: Prerequisites
-    url: /intro/prerequisites
-    not_numbered: true
-  - title: Code inefficiency
-    url: /intro/code_inefficiency
-    not_numbered: true
-  - title: Authors
-    url: /intro/authors
-    not_numbered: true
 
 - title: Classical methods
   url: /classical_methods/intro

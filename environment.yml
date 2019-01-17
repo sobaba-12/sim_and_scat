@@ -102,5 +102,3 @@ dependencies:
     - sqlalchemy==1.2.16
     - tqdm==4.29.1
     - urllib3==1.24.1
-prefix: /Users/andrew/miniconda3/envs/sim_and_scat
-

@@ -24,7 +24,8 @@ The Python code below runs a pylj molecular dynamics simulation.
 ```python
 from pylj import md, sample
 
-def md_simulation(number_of_particles, temperature, box_length, number_of_steps, sample_frequency):
+def md_simulation(number_of_particles, temperature, box_length, 
+                  number_of_steps, sample_frequency):
     """
     Runs a molecular dynamics simulation in suing the pylj molecular dynamics engine.
     
@@ -47,7 +48,7 @@ def md_simulation(number_of_particles, temperature, box_length, number_of_steps,
         The complete system information from pylj
     """
     # Creates the visualisation environment
-    %matplotlib notebook
+    %matplotlib widget
     # Initialise the system
     system = md.initialise(number_of_particles, temperature, box_length, 'square')
     # This sets the sampling class
@@ -72,6 +73,13 @@ def md_simulation(number_of_particles, temperature, box_length, number_of_steps,
     return system
 
 system = md_simulation(20, 300, 20, 5000, 10)
+```
+
+
+
+{:.output .output_data_text}
+```
+FigureCanvasNbAgg()
 ```
 
 

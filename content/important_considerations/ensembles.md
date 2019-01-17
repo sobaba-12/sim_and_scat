@@ -18,7 +18,7 @@ This means that the velocities of the particles may be rescaled by the following
 
 $$ \mathbf{v}_i = \mathbf{v}_i \sqrt{\dfrac{T_{\text{target}}}{\bar{T}}}, $$
 
-where $\mathbf{v}_i$ is the velocity of particle $i$, $T_{\text{target}}$ is the target temperature for the themostat, and $\bar{T}$ is the average simulation temperature.
+where $\mathbf{v}_i $ is the velocity of particle $i$, $T_{\text{target}}$ is the target temperature for the themostat, and $\bar{T}$ is the average simulation temperature.
 pylj [[1,2](#references)], to software that you shall use in the next lesson uses this method for producing an NVT simulation, using the `heat_bath` function.
 Various **other methods** for thermostating exist, such as the Anderson, Nosé-Hoover, or the Berendsen [[3-6](#references)].
 

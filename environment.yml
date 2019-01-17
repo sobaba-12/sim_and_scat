@@ -25,7 +25,6 @@ dependencies:
   - jupyter_client=5.2.3
   - jupyter_console=6.0.0
   - jupyter_core=4.4.0
-  - libcxxabi=4.0.1
   - libedit=3.1.20170329
   - libiconv=1.15
   - libpng=1.6.35

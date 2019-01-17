@@ -14,15 +14,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 # Calculating Scattering
 
-## Overview
-
-**Questions**
-- How do I get scattering data from a simulation?
-
-**Objectives**
-- Gain an appreciation of the Debye equation
-- Understand how it would be possible to implement the Debye equation and apply it to simulation data
-
 One of the main reasons that users of scattering techniques are interested in using molecular dynamics simulation is **compare** between the experiment and the simulation. 
 However, to do this there must be some parameter that is comparable.
 A commonly used method is to compare the experimental scattering profile with that generated from the simulation trajectory. 
@@ -149,12 +140,8 @@ Examples of these include the Fibonacci sequence method from Svergun, and the Go
 ## Exercise: Slow down
 Try increasing the number of particles in the simulation (you should probably also increase the simulation cell size), and observe the change in the efficiency of the simulation. 
 
-## Key Points
-- The Debye equation is an analytical derivation for the scattering profile for a given set of atomic coordinates
-- There are accurate approximations that can be utilised to save time in the calculation of the scattering.
-
 ## References
 
-1. Svergun, D. I. (1994). *Acta Cryst.*, **A50**, 391-402, [10.1107/S0108767393013492](https://doi.org/10.1107/S0108767393013492)
-2. Watson, M. C. and Curtis, J. E. (2013). *J. Appl. Crystallogr.*, **46**, 1171-1177, [10.1107/S002188981301666X](https://doi.org/10.1107/S002188981301666X)
+1. Svergun, D. I. *Acta Crystallogr. A* 1994, **50** (3), 391–402. [10.1107/S0108767393013492](https://doi.org/10.1107/S0108767393013492).
+2. Watson, M. C.; Curtis, J. E. *J. Appl. Crystallogr.* 2013, **46** (4), 1171–1177. [10.1107/S002188981301666X](https://doi.org/10.1107/S002188981301666X).
 3. These methods require the spherical symmetry present in three-dimensional space and therefore cannot be implemented within pylj.

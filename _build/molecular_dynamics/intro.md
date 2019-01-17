@@ -4,24 +4,15 @@ redirect_from:
 interact_link: content/molecular_dynamics/intro.ipynb
 title: 'Molecular dynamics'
 prev_page:
-  url: /parameterisation/intro
-  title: 'Parameterisation'
+  url: /parameterisation/mixing_rules
+  title: 'Mixing rules'
 next_page:
-  url: /important_considerations/intro
-  title: 'Important considerations'
+  url: /molecular_dynamics/build_an_md
+  title: 'Build an MD simulation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
 # Molecular Dynamics
-
-## Overview
-
-**Questions**
-- How does a molecular dynamics algorithm work?
-
-**Objectives**
-- Develop an understanding of the fundamentals of molecular dynamics
-- Construct a simple one-dimensional MD simulation from scratch
 
 Now that we have introduced the classical potential models, and how these models are obtained, we can start to look at the dynamics of the system. 
 
@@ -81,7 +72,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/molecular_dynamics/intro_3_0.png)
+![png](../images/molecular_dynamics/intro_2_0.png)
 
 
 
@@ -279,85 +270,7 @@ def init_velocity(T, number_of_particles):
 ```
 
 
-## Build an MD simulation
+## References
 
-We can now use the functions defined above build a one-dimensional molecular dynamics simulation, using the Python code below. 
+1. Martínez, L.; Andrade, R.; Birgin, E. G.; Martínez, J. M. *J. Comput. Chem.* 2009, **30** (13), 2157–2164. [10.1002/jcc.21224](https://doi.org/10.1002/jcc.21224).
 
-
-
-{:.input_area}
-```python
-def run_md(dt, number_of_steps, initial_temp, x):
-    """
-    Run a MD simulation.
-    
-    Parameters
-    ----------
-    dt: float
-        The timestep length
-    number_of_steps: int
-        Number of iterations in the simulation
-    initial_temp: float
-        Temperature of the system at initialisation
-    x: ndarray of floats
-        The initial positions of the particles in a single dimension
-        
-    Returns
-    -------
-    ndarray of floats
-        The positions for all of the particles throughout the simulation
-    """
-    positions = np.zeros((number_of_steps, 3))
-    v = init_velocity(initial_temp, 3)
-    a = get_accelerations(x)
-    for i in range(number_of_steps):
-        x = update_pos(x, v, a, dt)
-        a1 = get_accelerations(x)
-        v = update_velo(v, a, a1, dt)
-        a = np.array(a1)
-        positions[i, :] = x
-    return positions
-
-sim_pos = run_md(1e-14, 10000, 300, np.array([1e-10, 5e-10, 1e-9]))
-    
-%matplotlib inline
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-for i in range(sim_pos.shape[1]):
-    ax.plot(sim_pos[:, i], '.', label='atom {}'.format(i))
-ax.set_xlabel(r'Step')
-ax.set_ylabel(r'$x$-Position/m')
-ax.legend(frameon=False)
-plt.show()
-```
-
-
-
-{:.output .output_png}
-![png](../images/molecular_dynamics/intro_11_0.png)
-
-
-
-Generally the particles will follow each other through space. 
-If you **build the simulation in your own Jupyter Notebook**, it is possible to run the simulation at a series of different initial starting positions by varying values in the array `x`. 
-
-## Exercise: Kaboom!!
-
-Try changing the initial particle positions to `[1e-10, 2e-10, 1e-9]`. 
-The system will probably explode *explode*, consider why this has happened.
-
-
-## Solution: Kaboom!!
-
-Atom 0 and atom 1 have starting positions very close to each other, a distance of 1 Å. 
-This means that the force between the particles is **very** large, pushing them apart. 
-This system explosion is a common problem if the initial configuration is not correct. 
-
-## Key Points
-- Introduced to the basics of molecular dynamics simulation
-- Understand the limitations on the timestep size available to molecular dynamics
-- Be able to program a simple one-dimension MD simulation
-
-# References
-
-1. Martínez, L., Andrade, R, Birgin, E. G., & Martínez, J. M. (2009). J. Comput. Chem., **30**, 2157-2164 

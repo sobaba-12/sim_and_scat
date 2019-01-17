@@ -45,6 +45,17 @@
 - title: Molecular dynamics
   url: /molecular_dynamics/intro
   not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Build an MD simulation
+    url: /molecular_dynamics/build_an_md
+    not_numbered: true
+  - title: Exercise
+    url: /molecular_dynamics/exercise
+    not_numbered: true
+  - title: Solution
+    url: /molecular_dynamics/solution
+    not_numbered: true
 
 - title: Important considerations
   url: /important_considerations/intro

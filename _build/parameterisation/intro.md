@@ -140,6 +140,6 @@ Furthermore, it is important to remember the **different chemistry** that is pre
 For example, a carbon atom in a carbonyl group will not act the same as the carbon atom in a methane molecule. 
 To carry out these calculations for *every* molecular dynamics simulation that you wish to perform very quickly becomes highly unfeasible.
 
-# References
+## References
 
 1. Harvey, J. *Computational Chemistry*; Oxford University Press: Oxford, 2018.

@@ -29,3 +29,23 @@
   - title: The van der Waals interaction
     url: /classical_methods/van_der_waals
     not_numbered: true
+
+- title: Parameterisation
+  url: /parameterisation/intro
+  not_numbered: true
+
+- title: Molecular dynamics
+  url: /molecular_dynamics/intro
+  not_numbered: true
+
+- title: Important considerations
+  url: /important_considerations/intro
+  not_numbered: true
+
+- title: Using pylj
+  url: /using_pylj/intro
+  not_numbered: true
+
+- title: Calculating scattering
+  url: /calculating_scattering/intro
+  not_numbered: true

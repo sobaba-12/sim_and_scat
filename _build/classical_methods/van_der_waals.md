@@ -7,8 +7,8 @@ prev_page:
   url: /classical_methods/potential_models
   title: 'Potential models'
 next_page:
-  url: 
-  title: ''
+  url: /parameterisation/intro
+  title: 'Parameterisation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

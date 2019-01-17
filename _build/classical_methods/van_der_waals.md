@@ -178,7 +178,7 @@ plt.show()
 
 
 
-There is a small but clear difference between the two potential energy functions; this may be due to the different potential model or due to the [parameterisation](/parameterisation/intro) of that model.
+There is a small but clear difference between the two potential energy functions; this may be due to the different potential model or due to the [parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro) of that model.
 
 ## Important
 

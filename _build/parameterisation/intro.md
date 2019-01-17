@@ -5,20 +5,12 @@ prev_page:
   url: /classical_methods/van_der_waals
   title: 'The van der Waals interaction'
 next_page:
-  url: /molecular_dynamics/intro
-  title: 'Molecular dynamics'
+  url: /parameterisation/off_the_shelf
+  title: 'Off-the-shelf potentials'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
 # Parameterisation
-
-## Overview
-**Questions**
-- How do I get the parameters for a potential?
-- Why is this a limitation of molecular dynamics?
-
-**Objectives**
-- Emphasize the requirement to use or develop accurate potential models for the system under study.
 
 Once the potential energy function to be used for a particular interaction has been determined, it is then necessary to **parameterise** the function. 
 If we think back to the classical electrostatic interaction between two oppositely charged point particles, we would set the values of $q_i$ and $q_j$ to be 1 and -1, for modelling the interaction between a sodium and chloride ion pair. 
@@ -37,10 +29,10 @@ The purpose of parameterisation is to create a potential energy model that is ab
 This means that the parameters should really be obtained by optimising them with respect to a **more accurate** technique than classical simulation. 
 Commonly this involves either experimental measurements, e.g. X-ray crystallography, or quantum mechanical calculations; we will be focusing on the latter. 
 
-More can be found out about quantum mechanical calculations in the textbooks mentioned in the introduction (in particular Jeremy Harvey's Computational Chemistry Primer [1]).
+More can be found out about quantum mechanical calculations in the textbooks mentioned in the introduction (in particular Jeremy Harvey's Computational Chemistry Primer [[1](#references)]).
 However, for our current purposes we only need to remember the previous lesson where it was introduced that quantum calculations are more accurate than classical simulations.
 
-## Information: Quantum mechanical calculations
+### Quantum mechanical calculations
 
 These are more accurate then classical simulations. However, they are severely limited in the system size, with a maximum simulation size in the order of hundreds atoms. 
 
@@ -70,10 +62,9 @@ plt.show()
 
 
 
-{:.output .output_data_text}
-```
-<Figure size 800x500 with 1 Axes>
-```
+{:.output .output_png}
+![png](../images/parameterisation/intro_4_0.png)
+
 
 
 We can already see that the general shape of the curve is similar to a Lennard-Jones (or Buckingham) interaction.
@@ -140,7 +131,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/parameterisation/intro_9_0.png)
+![png](../images/parameterisation/intro_8_0.png)
 
 
 
@@ -149,54 +140,6 @@ Furthermore, it is important to remember the **different chemistry** that is pre
 For example, a carbon atom in a carbonyl group will not act the same as the carbon atom in a methane molecule. 
 To carry out these calculations for *every* molecular dynamics simulation that you wish to perform very quickly becomes highly unfeasible.
 
-## Off-the-shelf potentials
-
-In an effort to counter the problem of having to develop a new forcefield *every* time someone wanted to perform a molecular dynamics simulation, a variety of off-the-shelf potentials have been developed. 
-These are *general* forcefields that as designed to be applied to any system. 
-
-## Information: Off-the-shelf potentials
-
-Although a potential model has been developed with the aim of *generality*, they should still be used with **severe** caution. 
-The chemistry of your system may not directly match the system used in the potential generation, which can lead to extreme systematic errors in your the simulations. 
-
-Some examples of off-the-shelf potentials include:
-- AMBER: popular for DNA and proteins
-- CFF: designed for a broad variety of organic compounds
-- CHARMM: widely used for small molecules
-- GROMOS: common for biomolecular systems
-- OPLS-AA: optimised for liquid simulations
-
-These can be applied to many systems, however, as mentioned above, they should be used with caution. 
-One way to assess the suitability of an off-the-shelf potential is to use it to reproduce some simple, but known, property of the material, e.g. its density. 
-
-## Mixing rules
-
-Generally these off-the-shelf potentials only give the van der Waals potential for a self interaction.
-This is the interaction of a particular atom with another atom of the same type, e.g. an argon-argon interaction. 
-Therefore, it is necessary to determine how the different atom types **interact with one another**. 
-This is achieved through the application of mixing rules, providing a way to calculate the interaction potentials of different atoms interacting with each other. 
-
-One of the most common types of mixing rules are the **Lorentz-Berthelot** rules [2, 3]. 
-These are as follows, 
-
-$$ \sigma_{ij} = \dfrac{\sigma_{ii} + \sigma_{jj}}{2} \;\;\;\text{and}\;\;\; \varepsilon_{ij} = \sqrt{\varepsilon_{ii}\varepsilon_{jj}}. $$
-
-The values $\sigma$ and $\varepsilon$ are from a slightly different formulation of the Lennard-Jones interaction, 
-
-$$ E(r_{ii}) = 4\varepsilon\Bigg[\bigg(\dfrac{\sigma_{ii}}{r_{ii}}\bigg)^{12} - \bigg(\dfrac{\sigma_{ii}}{r_{ii}}\bigg)^{6}\Bigg]. $$
-
-This is simply an alternative way of writing the Lennard-Jones potential, as discussed previously. 
-
-As with the determination of the potentials itself, the way in which these potentials can be mixed vary massively and there is no single rule for all systems. 
-To give a flavour of the variation possible, the Wikipedia entry on [combining rules](https://en.wikipedia.org/wiki/Combining_rules) provides an introduction into some of the rule sets commonly employed. 
-
-## Key Points
-- Potential models are **not** trivial to parameterise
-- Some off-the-shelf potentials exist, but they **must** be used with caution
-- The way in which potentials mix is not well defined
-
 # References
 
-1. Harvey, J. (2017). *Computational Chemistry*. Oxford, UK. Oxford University Press
-2. Lorentz, H. A. (1881). Ann. Phys., **248**, 127-136. [DOI: 10.1002/andp.18812480110](https://doi.org/10.1002/andp.18812480110)
-3. Berthelot, D. (1898). Comptes. Rendus. Acad. Sci., **126**, 1703-1855
+1. Harvey, J. *Computational Chemistry*; Oxford University Press: Oxford, 2018.

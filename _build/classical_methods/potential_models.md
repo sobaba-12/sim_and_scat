@@ -26,7 +26,7 @@ For example, bond lengths are often modelled with a harmonic potential energy fu
 
 $$ E_{\text{bond length}}(\mathbf{r}_{ij}) = K_b(\mathbf{r}_{ij} - b_0), $$
 
-where, $b_0$ and $K_b$ are bond specific parameters which must be determined (see [Parameterisation](parameterisation/intro)), and $\mathbf{r}_{ij}$ is the distance between the two bonded particles. 
+where, $b_0$ and $K_b$ are bond specific parameters which must be determined (see [Parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro)), and $\mathbf{r}_{ij}$ is the distance between the two bonded particles. 
 An example of this function can be seen below, using the parameters of a carbon-carbon bond.
 
 

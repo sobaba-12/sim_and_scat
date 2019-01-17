@@ -33,6 +33,14 @@
 - title: Parameterisation
   url: /parameterisation/intro
   not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Off-the-shelf potentials
+    url: /parameterisation/off_the_shelf
+    not_numbered: true
+  - title: Mixing rules
+    url: /parameterisation/mixing_rules
+    not_numbered: true
 
 - title: Molecular dynamics
   url: /molecular_dynamics/intro

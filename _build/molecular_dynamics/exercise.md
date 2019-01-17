@@ -2,19 +2,17 @@
 redirect_from:
   - "/molecular-dynamics/exercise"
 interact_link: content/molecular_dynamics/exercise.ipynb
-title: 'Exercise'
+title: 'Kaboom!'
 prev_page:
   url: /molecular_dynamics/build_an_md
   title: 'Build an MD simulation'
 next_page:
-  url: /molecular_dynamics/solution
-  title: 'Solution'
+  url: /important_considerations/intro
+  title: 'Important considerations'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-## Exercise
-
-### Kaboom!!
+## Kaboom!!
 
 Try changing the initial particle positions to `[1e-10, 2e-10, 1e-9]`. 
 The system will probably explode *explode*, consider why this has happened.

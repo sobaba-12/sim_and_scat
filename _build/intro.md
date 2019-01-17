@@ -34,7 +34,7 @@ Please be aware that the Python code written in this tutorial has been written t
 
 ## Authors
 
-This open educational resource was originally developed by Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) for the University of Bath and Diamond Light Source.
+This open educational resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) for the University of Bath and Diamond Light Source.
 The following people contributed substantially to the resource:
 - [Adam R. Symington](https://orcid.org/0000-0001-6059-497X)
 - [Tim Snow](https://orcid.org/0000-0001-7146-6885)

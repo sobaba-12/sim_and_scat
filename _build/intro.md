@@ -50,7 +50,7 @@ The following people contributed substantially to the resource:
 3. Kim, S.-P.; van Duin, A. C. T.; Shenoy, V. B. *J. Power Sources* 2011, **196** (20), 8590–8597. [10.1016/j.jpowsour.2011.05.061](https://doi.org/10.1016/j.jpowsour.2011.05.061).
 4. Burbano, M.; Carlier, D.; Boucher, F.; Morgan, B. J.; Salanne, M. *Phys. Rev. Lett.* 2016, **116** (13). [10.1103/PhysRevLett.116.135901](https://doi.org/10.1103/PhysRevLett.116.135901).
 5. McCluskey, A. R.; Morgan, B. J.; Edler, K. J.; Parker, S. C. *J. Open Source Educ.* 2018, **1** (2), 19. [10.21105/jose.00019](https://doi.org/10.21105/jose.00019).
-6. McCluskey, A. R.; Symington, A. R. arm61/pylj: pylj-1.2.1 [10.5281/zenodo.2423866](http://doi.org/10.5281/zenodo.2423866).
+6. McCluskey, A. R.; Symington, A. R. [10.5281/zenodo.2423866](http://doi.org/10.5281/zenodo.2423866).
 7. Debye, P. *Ann. Phys.* 1915, **351** (6), 809–823. [10.1002/andp.19153510606](https://doi.org/10.1002/andp.19153510606).
 8. Harvey, J. *Computational Chemistry*; Oxford University Press: Oxford, 2018.
 9. Grant, G. H.; Richards, W. G. *Computational Chemistry*; Oxford University Press: Oxford, 1995.

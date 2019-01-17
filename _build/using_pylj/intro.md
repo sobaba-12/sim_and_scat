@@ -4,8 +4,8 @@ redirect_from:
 interact_link: content/using_pylj/intro.ipynb
 title: 'Using pylj'
 prev_page:
-  url: /important_considerations/intro
-  title: 'Important considerations'
+  url: /important_considerations/pbc
+  title: 'Solution'
 next_page:
   url: /calculating_scattering/intro
   title: 'Calculating scattering'

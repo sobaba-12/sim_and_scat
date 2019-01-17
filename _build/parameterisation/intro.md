@@ -2,8 +2,8 @@
 interact_link: content/parameterisation/intro.ipynb
 title: 'Parameterisation'
 prev_page:
-  url: /classical_methods/intro
-  title: 'Classical methods'
+  url: /classical_methods/van_der_waals
+  title: 'The van der Waals interaction'
 next_page:
   url: /molecular_dynamics/intro
   title: 'Molecular dynamics'

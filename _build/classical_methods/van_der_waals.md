@@ -18,7 +18,7 @@ The potential model for the short-range interaction between atoms is less well d
 It is often referred to as the **van der Waals** interaction, and encompasses both the attractive London dispersion effects and the repulsive Pauli exclusion principle. 
 There are a variety of ways that the van der Waals interaction can be modelled. 
 
-One commonly applied method is the **Lennard-Jones** potential model, which considers the attractve London dispersion effects as follows, 
+One commonly applied method is the **Lennard-Jones** potential model [[1](#references)], which considers the attractve London dispersion effects as follows, 
 
 $$ E_{\text{attractive}}(r_{ij}) = \dfrac{-B}{r_{ij}^6},$$ 
 
@@ -30,7 +30,7 @@ $$ E_{\text{repulsive}}(r_{ij}) = \dfrac{A}{r_{ij}^{12}},$$
 where $A$ is some interaction specific constant.
 The Python code below defines each of the components of the Lennard-Jones potential, and the total energy of the interaction.
 These are then all plotted on a single graph. 
-The values of $A$ and $B$ are those associated with an argon-argon interaction, as defined by Rahman.
+The values of $A$ and $B$ are those associated with an argon-argon interaction, as defined by Rahman [[2](#references)].
 
 
 
@@ -121,7 +121,7 @@ plt.show()
 
 
 The Lennard-Jones potential is not the only way to model the van der Waals interaction. 
-Another commonly applied potential model is the **Buckingham** potential.
+Another commonly applied potential model is the **Buckingham** potential [[3](#references)].
 Similar to the Lennard-Jones potential, the Buckingham models the attractive term with a power-6. 
 However, instead of the power-12 repulsion, this is modelled with an exponential function. 
 The total Buckingham potential has the following form, 
@@ -186,4 +186,8 @@ These are just two of many potentials for modelling of the van der Waals interat
 
 
 ## References
+
+1. Lennard-Jones, J. E. *Proc. Royal Soc. Lond. A.* 1924, **106** (738), 463–477. [10.1098/rspa.1924.0082](https://doi.org/10.1098/rspa.1924.0082).
+2. Rahman, A. *Phys. Rev.* 1964, **136** (2A), A405–A411. [10.1103/PhysRev.136.A405](https://doi.org/10.1103/PhysRev.136.A405).
+3. Buckingham, R. A. *Proc. Royal Soc. Lond. A.* 1938, **168** (933), 264–283. [10.1098/rspa.1938.0173](https://doi.org/10.1098/rspa.1938.0173).
 

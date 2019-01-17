@@ -2,8 +2,8 @@
 interact_link: content/parameterisation/intro.ipynb
 title: 'Parameterisation'
 prev_page:
-  url: /classical_methods/van_der_waals
-  title: 'The van der Waals interaction'
+  url: /classical_methods/intro
+  title: 'Classical methods'
 next_page:
   url: /molecular_dynamics/intro
   title: 'Molecular dynamics'
@@ -20,15 +20,15 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 **Objectives**
 - Emphasize the requirement to use or develop accurate potential models for the system under study.
 
-Once the function form that is to be used for a particular interaction has been determined, it is necessary to **parameterise** that potential energy function. 
-If we think back to the classical electrostatic interaction between two oppositely charged point particles, we set the values of $q_i$ and $q_j$ to be 1 and -1 to model the interaction between a sodium and chloride ion pair. 
-This was the parameterisation step of our model. 
+Once the potential energy function to be used for a particular interaction has been determined, it is then necessary to **parameterise** the function. 
+If we think back to the classical electrostatic interaction between two oppositely charged point particles, we would set the values of $q_i$ and $q_j$ to be 1 and -1, for modelling the interaction between a sodium and chloride ion pair. 
+This was the parameterisation step for that system. 
 
-For the ion pair with integer charges this is straight-forward. 
-However, consider modelling the potential energy between a carbonyl oxygen atom and the hydrogen atom of a water molecule. 
-Both of these have some charged character that is **ill defined**, but must be accounted for.
+For an ion pair with integer charges this is straight-forward. 
+However, consider modelling the potential energy between a carbonyl oxygen atom of a hydrocarbon molecule and the hydrogen atom of a water molecule. 
+Both of these have some charged character, however, this is **ill defined**, but must be accounted for.
 
-The problem of the correct parameterisation is present for **all** the potential energy functions. 
+The difficulty of deducing the correct parameterisation is inherent to **all** potential energy functions. 
 For the Lennard-Jones function, the parameterisation involves determining the best possible values for $A$ and $B$. 
 
 ## How to parameterise a potential model?
@@ -42,10 +42,10 @@ However, for our current purposes we only need to remember the previous lesson w
 
 ## Information: Quantum mechanical calculations
 
-These are more accurate then classical simulations. However, they are severely limited in the system size, maximum 100s atoms. 
+These are more accurate then classical simulations. However, they are severely limited in the system size, with a maximum simulation size in the order of hundreds atoms. 
 
 We will stick with the example of a Lennard-Jones interaction, however the arguments and methods discussed are **extensible to all different interaction types**. 
-To generate the potential energy model between two particles of argon, we could conduct quantum mechanical calculations at a range of inter-atom separations, from 3 to 8 Å, to find the energy between the two particles.
+To generate the potential energy model between two particles of argon, we could conduct quantum mechanical calculations at a range of inter-atom separations, from 3 to 8 Å, finding the energy between the two particles at each separation.
 
 The Python code below plots the energy vs distances that may be obtained from a quantum mechanical calculation. 
 
@@ -77,7 +77,7 @@ plt.show()
 
 
 We can already see that the general shape of the curve is similar to a Lennard-Jones (or Buckingham) interaction.
-There is a well at the **equilibrium bond distance** and a steep incline as the particles become **too close**. 
+There is a well at the **equilibrium bond distance** and a steep incline as the particles come **too close** together. 
 It is possible to then fit a Lennard-Jones function to this data, the Python code below does this using a simple least-squares fit.
 
 
@@ -144,10 +144,10 @@ plt.show()
 
 
 
-Note that it would be necessary to carry out this process for **every** interaction in your calculation, e.g. bonds, angles, dihedrals, van der Waals, and Coulombic. 
-Furthmore, it is important to remember the **different chemistry** that is present for each atom. 
-For example, the carbon atom is a carbonyl group will not act the same as the carbon atom in a methane molecule. 
-To carry out this for *every* molecular dynamics simulation that you wish to perform quickly becomes very unfeasible.
+Note that it would be necessary to carry out this process for **every** interaction in your calculation, e.g. bond lengths, bond angles, dihedral angles, van der Waals and Coulombic interactions forces, etc. 
+Furthermore, it is important to remember the **different chemistry** that is present for each atom. 
+For example, a carbon atom in a carbonyl group will not act the same as the carbon atom in a methane molecule. 
+To carry out these calculations for *every* molecular dynamics simulation that you wish to perform very quickly becomes highly unfeasible.
 
 ## Off-the-shelf potentials
 
@@ -157,7 +157,7 @@ These are *general* forcefields that as designed to be applied to any system.
 ## Information: Off-the-shelf potentials
 
 Although a potential model has been developed with the aim of *generality*, they should still be used with **severe** caution. 
-The chemistry in your system may not match directly the system used in the potential generation, which can lead to extreme systematic errors in your the simulations. 
+The chemistry of your system may not directly match the system used in the potential generation, which can lead to extreme systematic errors in your the simulations. 
 
 Some examples of off-the-shelf potentials include:
 - AMBER: popular for DNA and proteins
@@ -166,15 +166,15 @@ Some examples of off-the-shelf potentials include:
 - GROMOS: common for biomolecular systems
 - OPLS-AA: optimised for liquid simulations
 
-These can be applied to many systems, however as mentioned above they should be used with caution. 
-One way to assess an off-the-shelf is to use it to reproduce some simple, but known, property of the material, e.g. density. 
+These can be applied to many systems, however, as mentioned above, they should be used with caution. 
+One way to assess the suitability of an off-the-shelf potential is to use it to reproduce some simple, but known, property of the material, e.g. its density. 
 
 ## Mixing rules
 
-Generally these off-the-shelf potentials only give the van der Waals potential for the self interaction.
-This is the interaction of a particular atom, with another atom of the same time (e.g. an argon-argon interaction). 
+Generally these off-the-shelf potentials only give the van der Waals potential for a self interaction.
+This is the interaction of a particular atom with another atom of the same type, e.g. an argon-argon interaction. 
 Therefore, it is necessary to determine how the different atom types **interact with one another**. 
-This is achieved through mixing rules, this is the way in which the interaction potentials of different atoms interact with each other. 
+This is achieved through the application of mixing rules, providing a way to calculate the interaction potentials of different atoms interacting with each other. 
 
 One of the most common types of mixing rules are the **Lorentz-Berthelot** rules [2, 3]. 
 These are as follows, 
@@ -185,18 +185,18 @@ The values $\sigma$ and $\varepsilon$ are from a slightly different formulation 
 
 $$ E(r_{ii}) = 4\varepsilon\Bigg[\bigg(\dfrac{\sigma_{ii}}{r_{ii}}\bigg)^{12} - \bigg(\dfrac{\sigma_{ii}}{r_{ii}}\bigg)^{6}\Bigg]. $$
 
-This is simply an alternative way of writing the Lennard-Jones potential discussed previously. 
+This is simply an alternative way of writing the Lennard-Jones potential, as discussed previously. 
 
-As with the determination of the potentials itself, the way in which these potentials are mixed can vary massively and there is no single rule for all systems. 
-To give a flavour of the variation that is possible, check out the Wikipedia page on [combining rules](https://en.wikipedia.org/wiki/Combining_rules). 
+As with the determination of the potentials itself, the way in which these potentials can be mixed vary massively and there is no single rule for all systems. 
+To give a flavour of the variation possible, the Wikipedia entry on [combining rules](https://en.wikipedia.org/wiki/Combining_rules) provides an introduction into some of the rule sets commonly employed. 
 
 ## Key Points
 - Potential models are **not** trivial to parameterise
 - Some off-the-shelf potentials exist, but they **must** be used with caution
-- The way in which the potentials mix is not well defined
+- The way in which potentials mix is not well defined
 
 # References
 
 1. Harvey, J. (2017). *Computational Chemistry*. Oxford, UK. Oxford University Press
-2. Lorentz, H. A. (1881). Ann. Phys., **248**, 127-136. [10.1002/andp.18812480110](https://doi.org/10.1002/andp.18812480110)
+2. Lorentz, H. A. (1881). Ann. Phys., **248**, 127-136. [DOI: 10.1002/andp.18812480110](https://doi.org/10.1002/andp.18812480110)
 3. Berthelot, D. (1898). Comptes. Rendus. Acad. Sci., **126**, 1703-1855

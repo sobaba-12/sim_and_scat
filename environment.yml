@@ -38,7 +38,7 @@ dependencies:
   - nbconvert=5.3.1=py37_0
   - nbformat=4.4.0=py37_0
   - ncurses=6.1=h0a44026_1
-  - nodejs=10.13.0=h0a44026_0
+  - nodejs=10.13.0
   - notebook=5.7.2=py37_0
   - openssl=1.1.1a=h1de35cc_0
   - pandoc=2.2.3.2=0

@@ -12,7 +12,7 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-### The van der Waals interaction
+## The van der Waals interaction
 
 The potential model for the short-range interaction between atoms is less well defined.
 It is often referred to as the **van der Waals** interaction, and encompasses both the attractive London dispersion effects and the repulsive Pauli exclusion principle. 

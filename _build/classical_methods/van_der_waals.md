@@ -184,10 +184,8 @@ There is a small but clear difference between the two potential energy functions
 
 These are just two of many potentials for modelling of the van der Waals interation. Furthermore, the parameters used in the model are just one example of the many possible parameterisations of the argon-argon interaction. 
 
-
 ## References
 
 1. Lennard-Jones, J. E. *Proc. Royal Soc. Lond. A.* 1924, **106** (738), 463–477. [10.1098/rspa.1924.0082](https://doi.org/10.1098/rspa.1924.0082).
 2. Rahman, A. *Phys. Rev.* 1964, **136** (2A), A405–A411. [10.1103/PhysRev.136.A405](https://doi.org/10.1103/PhysRev.136.A405).
 3. Buckingham, R. A. *Proc. Royal Soc. Lond. A.* 1938, **168** (933), 264–283. [10.1098/rspa.1938.0173](https://doi.org/10.1098/rspa.1938.0173).
-

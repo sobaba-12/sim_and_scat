@@ -25,7 +25,7 @@ Figure 1 shows a pictorial example of a PBC.
 
 <center>
     <br>
-    <img src="../images/pbc.png" width="300px">
+    <img src="../images/pbc.png" width="300px"><br>
     <i>Figure 1. A two-dimensional example of a periodic cell.</i>
     <br>
 </center>

@@ -77,7 +77,7 @@ However, it is important to be aware that all aspects mentioned are **equally ap
 
 Commonly considered non-bonded interactions consist of long-range and short-range interactions. 
 The long-range interactions usually consist of classical electrostatic interactions between particles. 
-For example, Coulomb's law [1, 2] may be used to model the potential energy of the long-range interaction between oppositely charge point particles,
+For example, Coulomb's law [[1, 2](#references)] may be used to model the potential energy of the long-range interaction between oppositely charge point particles,
 
 $$ E_{\text{Coulomb}}(r_{ij}) = \frac{1}{4\pi\epsilon_0}\frac{q_iq_je^2}{r_{ij}^2}, $$ 
 

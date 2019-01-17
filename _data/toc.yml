@@ -79,3 +79,14 @@
 - title: Calculating scattering
   url: /calculating_scattering/intro
   not_numbered: true
+  expand_sections: true
+  sections:
+  - title: The Debye equation
+    url: /calculating_scattering/debye_equation
+    not_numbered: true
+  - title: Temperature
+    url: /calculating_scattering/temp
+    not_numbered: true
+  - title: Scaling
+    url: /calculating_scattering/scaling
+    not_numbered: true

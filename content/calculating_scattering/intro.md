@@ -1,15 +1,3 @@
----
-redirect_from:
-  - "/calculating-scattering/intro"
-title: 'Calculating scattering'
-prev_page:
-  url: /using_pylj/intro
-  title: 'Using pylj'
-next_page:
-  url: /calculating_scattering/debye_equation
-  title: 'The Debye equation'
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
 # Calculating Scattering
 
 One of the main reasons that users of scattering techniques are interested in using molecular dynamics simulation is **compare** between the experiment and the simulation. 

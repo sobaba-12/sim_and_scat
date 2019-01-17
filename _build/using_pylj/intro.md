@@ -14,9 +14,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 # Using pylj
 
-## pylj
-
-pylj is an open-source tool for **enabling interaction between students** (the user of this tutorials) and molecular dynamics simulations [1]. 
+pylj is an open-source tool for **enabling interaction between students** (the user of this tutorials) and molecular dynamics simulations [[1,2](#references)]. 
 This software enables the simulation of argon atoms in a two-dimensional box. 
 The Python code below runs a pylj molecular dynamics simulation. 
 

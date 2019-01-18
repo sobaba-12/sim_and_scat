@@ -16,9 +16,9 @@ $$ T_{\text{inst}} = \frac{\sum^N_{i=0}{m_i v_i^2}}{2Nk_B}, $$
 where, $N$ is the number of particles, $m_i$ is the mass of particle $i$, $v_i$ is the velocity of particle $i$, and $k_B$ is the Boltzmann constant.
 This means that the velocities of the particles may be rescaled by the following relation,
 
-$$ \mathbf{v}_i = \mathbf{v}_i \sqrt{\dfrac{T_{\text{target}}}{\bar{T}}}, $$
+$$ v_i = v_i \sqrt{\dfrac{T_{\text{target}}}{\bar{T}}}, $$
 
-where $\mathbf{v}_i$ is the velocity of particle $i$, $T_{\text{target}}$ is the target temperature for the themostat, and $\bar{T}$ is the average simulation temperature.
+where $v_i$ is the velocity of particle $i$, $T_{\text{target}}$ is the target temperature for the themostat, and $\bar{T}$ is the average simulation temperature.
 pylj [[1,2](#references)], the software that you shall use in the next lesson uses this method for producing an NVT simulation, using the `heat_bath` function.
 Various **other methods** for thermostatting exist, such as the Anderson, Nosé-Hoover, or the Berendsen [[3-6](#references)].
 

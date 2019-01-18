@@ -1,6 +1,6 @@
 ## Ensembles
 
-The molecular dynamics algorithm outlined in the previous lesson makes use of the NVE ensemble (also known as the microcanonical ensemble), where the number of particles (N), volume of the system (V), and energy of the system (E) are all **kept constant**.
+The molecular dynamics algorithm outlined in the previously makes use of the NVE ensemble (also known as the microcanonical ensemble), where the number of particles (N), volume of the system (V), and energy of the system (E) are all **kept constant**.
 This is not the only, or the most accurate, ensemble that exists, there is also other such as:
 - NVT (canonical): number of particles (N), volume of system (V), temperature of the simulation (T)
 - NPT (isothermal-isobaric): number of particles (N), pressure of system (P), temperature of the simulation (T)
@@ -19,7 +19,7 @@ This means that the velocities of the particles may be rescaled by the following
 $$ v_i = v_i \sqrt{\dfrac{T_{\text{target}}}{\bar{T}}}, $$
 
 where $T_{\text{target}}$ is the target temperature for the themostat, and $\bar{T}$ is the average simulation temperature.
-pylj [[1,2](#references)], the software that you shall use in the next lesson uses this method for producing an NVT simulation, using the `heat_bath` function.
+pylj [[1,2](#references)], the software that you shall use later uses this method for producing an NVT simulation, using the `heat_bath` function.
 Various **other methods** for thermostatting exist, such as the Anderson, Nosé-Hoover, or the Berendsen [[3-6](#references)].
 
 In order to achieve the NPT ensemble, it is necessary to use a **barostat** in addition to a thermostat.

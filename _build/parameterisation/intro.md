@@ -30,11 +30,13 @@ This means that the parameters should really be obtained by optimising them with
 Commonly this involves either experimental measurements, e.g. X-ray crystallography, or quantum mechanical calculations; we will be focusing on the latter. 
 
 More can be found out about quantum mechanical calculations in the textbooks mentioned in the introduction (in particular Jeremy Harvey's Computational Chemistry Primer [[1](#references)]).
-However, for our current purposes we only need to remember the previous lesson where it was introduced that quantum calculations are more accurate than classical simulations.
+However, for our current purposes we only need to remember that quantum calculations are more accurate than classical simulations.
 
 ### Quantum mechanical calculations
 
 These are more accurate then classical simulations. However, they are severely limited in the system size, with a maximum simulation size in the order of hundreds atoms. 
+
+### Parameterising a Lennard-Jones interaction
 
 We will stick with the example of a Lennard-Jones interaction, however the arguments and methods discussed are **extensible to all different interaction types**. 
 To generate the potential energy model between two particles of argon, we could conduct quantum mechanical calculations at a range of inter-atom separations, from 3 to 8 Å, finding the energy between the two particles at each separation.

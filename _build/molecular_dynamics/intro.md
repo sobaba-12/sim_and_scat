@@ -84,7 +84,7 @@ $$ \mathbf{f}_x = f\hat{\mathbf{r}}_x\text{, where }\hat{\mathbf{r}}_x = \dfrac{
 
 In the above equation, $r_x$ is the distance between the two particles in the $x$-dimension and $\mathbf{r}$ is the overall distance vector. 
 The above equation must be determined to find the force in each dimension. 
-However, this lesson will **only** consider particles interacting in a one-dimensional space. 
+However, currently we will **only** consider particles interacting in a one-dimensional space. 
 
 The Python code below shows how to determine the acceleration on each atom of argon due to each other atom of argon. 
 Due to Newton's third law, we are able to **increase the efficiency** of this algorithm as the force on atom $i$ will be equal and opposite to the force on atom $j$. 

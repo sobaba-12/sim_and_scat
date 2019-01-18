@@ -31,7 +31,7 @@ Figure 1 shows a pictorial example of a PBC.
 </center>
 
 When a particle reaches the cell wall it moves into the adjecent cell, and since all the cells are identical, it appears on the other side. 
-The code below modifies the `update_pos` and `get_acceleration` functions from the previous lesson to account for the periodic boundary condition.
+The code below modifies the `update_pos` and `get_acceleration` functions defined previously to account for the periodic boundary condition.
 
 
 

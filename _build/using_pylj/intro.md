@@ -48,7 +48,7 @@ def md_simulation(number_of_particles, temperature, box_length,
         The complete system information from pylj
     """
     # Creates the visualisation environment
-    %matplotlib widget
+    %matplotlib notebook
     # Initialise the system
     system = md.initialise(number_of_particles, temperature, box_length, 'square')
     # This sets the sampling class

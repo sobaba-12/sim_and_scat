@@ -18,15 +18,15 @@ To get the most from this tutorial you will need:
 
 ## Using this resource
 
-This resource is designed to be interactive, which is achieved using [Thebelab] and [BinderHub] integration.
+This resource is designed to be interactive, which is achieved using [Thebelab](https://github.com/minrk/thebelab) and [BinderHub](https://binderhub.readthedocs.io/en/latest/) integration.
 Each page that contains interactive content will have the following two buttons at the top,
 
 ![](./images/thebebinder.png)
 
-Selecting the "Interact" button will open a Jupyter Notebook version of the page running on the [MyBinder] resource in a new tab.
+Selecting the "Interact" button will open a Jupyter Notebook version of the page running on the [MyBinder](https://mybinder.org) resource in a new tab.
 The "Thebelab" button will make the code blocks in the webpage interactive, they can be run, edited, and run again.
 The Thebelab integration is still in beta and therefore will not work perfectly every time (it is known not to work for the pylj examples towards the end).
-When the Thebelab integration fails, please use the Interact button. 
+When the Thebelab integration fails, please use the Interact button.
 
 ## Sharing this resource
 

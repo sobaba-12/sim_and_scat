@@ -11,5 +11,5 @@ dependencies:
     - scipy==1.1.0
     - numpy==1.15.4
     - matplotlib==3.0.2
-    - pylj==1.2.0
+    - pylj==1.2.2
 prefix: /Users/andrew/miniconda3/envs/sim_and_scat

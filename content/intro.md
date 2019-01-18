@@ -16,6 +16,27 @@ To get the most from this tutorial you will need:
 - Some knowledge of undergraduate chemistry or physics may be required to fully appreciate the nature of classical potential models.
 - A decent understanding of advanced high school level mathematics.
 
+## Using this resource
+
+This resource is designed to be interactive, which is achieved using [Thebelab] and [BinderHub] integration.
+Each page that contains interactive content will have the following two buttons at the top,
+
+![](./images/thebebinder.png)
+
+Selecting the "Interact" button will open a Jupyter Notebook version of the page running on the [MyBinder] resource in a new tab.
+The "Thebelab" button will make the code blocks in the webpage interactive, they can be run, edited, and run again.
+The Thebelab integration is still in beta and therefore will not work perfectly every time (it is known not to work for the pylj examples towards the end).
+When the Thebelab integration fails, please use the Interact button. 
+
+## Sharing this resource
+
+This is an open educational resource, shared under a [CC BY-SA 4.0 license](./LICENSE.md).
+This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
+Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
+Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib)
+> The reference information will go here
+
+
 ## Code (in)efficiency
 
 Please be aware that the Python code written in this tutorial has been written to prioritise understanding, above computational efficiency. Individual examples may therefore not be be the most efficient implementation of particular algorithms. That said, we have endeavoured to provide code examples that are “authentic”, and accurately represent the relevant aspects of “real” molecular dynamics methods.

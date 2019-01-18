@@ -50,7 +50,8 @@ This is an open educational resource, shared under a [CC BY-SA 4.0 license](./LI
 This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
 Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
 Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
-> The reference information will go here
+> McCluskey, A. R. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
+
 
 ## Authors
 

@@ -14,6 +14,13 @@ Basically you can do whatever you want with it, although we would appreciate if 
 Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
 > McCluskey, A. R. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
 
+## Contributing to this resource
+
+We welcome all contributions. 
+The content of the webpages can be changed by editing the notebooks and markdown files the `content` directory. 
+The ordering of the content is controlled by `data/toc.yml`.
+Pleaase feel free to make a pull request with your changes and we will try and review them ASAP.
+
 ## Authors
 
 The resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) during his PhD at the University of Bath and Diamond Light Source.

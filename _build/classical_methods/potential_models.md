@@ -21,7 +21,7 @@ For a molecular system, this is represented as a series of bonded and non-bonded
 $$ E(\mathbf{r}) = E_{\text{bond}}(\mathbf{r}) + E_{\text{non-bond}}(\mathbf{r}). $$
 
 The total potential energy of the given system is then the sum of these potential energy calculations for each atom. 
-It is common for the bonded potential energy ($ E_{\text{bond}}(\mathbf{r}) $) to consist of terms taking into account the contritions of bond length, bond angle, and dihedral angle. 
+It is common for the bonded potential energy $( E_{\text{bond}}(\mathbf{r}) )$ to consist of terms taking into account the contritions of bond length, bond angle, and dihedral angle. 
 For example, bond lengths are often modelled with a harmonic potential energy function, 
 
 $$ E_{\text{bond length}}(\mathbf{r}_{ij}) = K_b(\mathbf{r}_{ij} - b_0), $$

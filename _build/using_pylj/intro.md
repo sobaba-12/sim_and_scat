@@ -76,13 +76,6 @@ system = md_simulation(20, 300, 20, 5000, 10)
 ```
 
 
-
-{:.output .output_data_text}
-```
-FigureCanvasNbAgg()
-```
-
-
 The functionality of pylj that we will be using is the ability to **add custom plots** to the interface, as well as the storing of information about the particle positions.
 This is can be observed with the Python code below for the instanteous temperature of the simulation being performed.
 

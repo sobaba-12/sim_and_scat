@@ -1,51 +1,32 @@
-# <img src="content/images/logo/logo.png" width=40 /> Jupyter Book
+# The interaction between simulation and scattering
 
-[![CircleCI](https://circleci.com/gh/jupyter/jupyter-book.svg?style=svg)](https://circleci.com/gh/jupyter/jupyter-book)
+[![DOI](https://zenodo.org/badge/166191412.svg)](https://zenodo.org/badge/latestdoi/166191412)
 
-This is a guide and template for hosting your own book using
-Jupyter Notebooks and Jekyll.
+The is the repository for the open educational resource (OER) entitled "The interaction between simulation and scattering".
+This resource is designed to introduce users of scattering and diffraction techniques to the methods of classical simulation and molecular dynamics.
+The resource is currently hosted at [pythoninchemistry.org/sim_and_scat](http://pythoninchemistry.org/sim_vs_trad/intro.html).
 
-Here are some highlights:
+## Sharing this resource
 
-* All course content is written in markdown and Jupyter Notebooks, stored in `notebooks/`
-* This site comes packaged with helper scripts to convert these into Jekyll pages (in `scripts/`)
-* Pages can have [Binder](https://mybinder.org) or JupyterHub links automatically added for interactivity.
-* The website itself is based on Jekyll, and is highly extensible and can be freely-hosted on GitHub.
+This OER is shared under a [CC BY-SA 4.0 license](./LICENSE.md).
+This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
+Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
+Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
+> McCluskey, A. R. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
 
-This repository comes with some sample textbook files from the Data 8 course
-for Data Science at UC Berkeley. You can update these materials and all site
-content with your own, and have a Jupyter-based textbook ready to go shortly!
+## Authors
 
-Here are a few links of interest:
-
-* **[A demo of the hosted textbook](http://jupyter.org/jupyter-book/ )**
-* **[A short guide to deploying your own textbook](https://jupyter.org/jupyter-book/guide/01_overview)**
-* **[The markdown version of the guide in this repo](content/guide/)**
-
-## Explore this book
-
-This website is an example of a Jupyter Book. You can explore the chapters of the book
-by clicking on links in the sidebar to the left. Or, you can move linearly forward and
-backwards by clicking the left/right arrow on your computer.
-
-## Governance of this project
-
-Jupyter Book is still developing relatively rapidly, so please be patient if things change
-or features iterate and change quickly. Once Jupyter Book hits 1.0, it will slow down
-considerably!
-
-## Contribute or improve the book
-
-Notice some inefficient CSS? A typo in the text? Want to add a cool feature so that others
-can enjoy the improvements to Jupyter Books? Don't hesitate to [open an issue or a PR on the
-Jupyter Book template repo](https://github.com/jupyter/jupyter-book). We'd love your
-help!
+The resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) during his PhD at the University of Bath and Diamond Light Source.
+The following people contributed substantially to the resource:
+- [Adam R. Symington](https://orcid.org/0000-0001-6059-497X)
+- [Tim Snow](https://orcid.org/0000-0001-7146-6885)
+- [James Grant](https://orcid.org/0000-0003-1362-2055)
+- [Benjamin J. Morgan](https://orcid.org/0000-0002-3056-8233)
+- [Stephen C. Parker](https://orcid.org/0000-0003-3804-0975)
+- [Karen J. Edler](https://orcid.org/0000-0001-5822-0127)
 
 ## Acknowledgements
 
-Jupyter Books was originally created by [Sam Lau][sam] and [Chris Holdgraf][chris]
-with support of the **UC Berkeley Data Science Education Program and the Berkeley
-Institute for Data Science**.
-
-[sam]: http://www.samlau.me/
-[chris]: https://predictablynoisy.com
+A. R. M. is grateful to the University of Bath and Diamond Light Source for co-funding a studentship (Studentship No. STU0149).
+B. J. M. acknowledges support from the Royal Society (Grant No. UF130329).
+This OER was built on the [jupyter-book](https://github.com/jupyter/jupyter-book) platform and much of the functionality we have is due to that framework.

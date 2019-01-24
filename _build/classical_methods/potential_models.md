@@ -4,8 +4,8 @@ redirect_from:
 interact_link: content/classical_methods/potential_models.ipynb
 title: 'Potential models'
 prev_page:
-  url: /classical_methods/van_der_waals
-  title: 'The van der Waals interaction'
+  url: /classical_methods/coulomb
+  title: 'Charged interactions'
 next_page:
   url: /parameterisation/intro
   title: 'Parameterisation'

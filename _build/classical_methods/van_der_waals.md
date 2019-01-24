@@ -24,7 +24,7 @@ One mathematical function that is commonly applied is the **Lennard-Jones** pote
 $$ E_{\text{attractive}}(r) = -4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^6\;,$$ 
 
 where $\sigma$ is the distance at which the potential energy between the two particles is zero, $-\varepsilon$ is the potential energy at the equilbrium separation, and $r$ is the distance between the two atoms. 
-The Pauli exclusion principle is repulsive and only present over very short distances modelled as, 
+The Pauli exclusion principle is repulsive and only important over very short distances modelled as, 
 
 $$ E_{\text{repulsive}}(r) = 4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^{12}\;,$$
 
@@ -105,7 +105,7 @@ def lj_energy(r, epsilon, sigma):
     """
     return repulsive_energy(r, epsilon, sigma) + attractive_energy(r, epsilon, sigma)
 
-r = np.linspace(3, 8, 100)
+r = np.linspace(3, 5, 100)
 plt.plot(r, attractive_energy(r, 0.0103, 3.4), label='Attractive')
 plt.plot(r, repulsive_energy(r, 0.0103, 3.4), label='Repulsive')
 plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
@@ -161,7 +161,7 @@ def buckingham_energy(rij, a, b, c):
     """
     return a * np.exp(-b * r) - c / np.power(r, 6)
 
-r = np.linspace(3, 8, 100)
+r = np.linspace(3, 5, 100)
 plt.plot(r, buckingham_energy(r, 10549.313, 3.66, 63.670), label='Buckingham')
 plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
 plt.xlabel(r'$r$/Å')
@@ -177,7 +177,7 @@ plt.show()
 
 
 
-There is a small but clear difference between the two potential energy functions; this may be due to the different potential model or due to the [parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro) of that model.
+There is a small but clear difference between the two potential energy functions; this is be due to the different potential model and the [parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro) of that model.
 
 ## Important
 

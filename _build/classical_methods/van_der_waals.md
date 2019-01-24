@@ -4,33 +4,33 @@ redirect_from:
 interact_link: content/classical_methods/van_der_waals.ipynb
 title: 'The van der Waals interaction'
 prev_page:
+  url: /classical_methods/intro
+  title: 'Classical methods'
+next_page:
   url: /classical_methods/potential_models
   title: 'Potential models'
-next_page:
-  url: /parameterisation/intro
-  title: 'Parameterisation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
 ## The van der Waals interaction
 
-The potential model for the short-range interaction between atoms is less well defined.
-It is often referred to as the **van der Waals** interaction, and encompasses both the attractive London dispersion effects and the repulsive Pauli exclusion principle. 
-There are a variety of ways that the van der Waals interaction can be modelled. 
+Previously, you were given the opportunity to observe particles that interact only through the van der Waals interaction. 
+In order to achieve this it is necessary to have a **potential model**, a mathematical function, that is capable of modeling such an interaction. 
+It is known that the van der Waals interaction encompasses **two** forces; the first is the long-range attractive London dispersion and the second is the short-range Pauli exclusion principle.
+Therefore, or potential model must be able to model both of these aspects. 
 
-One commonly applied method is the **Lennard-Jones** potential model [[1](#references)], which considers the attractve London dispersion effects as follows, 
+One mathematical function that is commonly applied is the **Lennard-Jones** potential model [[1](#references)], which considers the attractve London dispersion forces as follows, 
 
-$$ E_{\text{attractive}}(r_{ij}) = \dfrac{-B}{r_{ij}^6},$$ 
+$$ E_{\text{attractive}}(r) = -4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^6\;,$$ 
 
-where $B$ is a constant for the interaction and $r_{ij}$ is the distance between the two atoms. 
+where $\sigma$ is the distance at which the potential energy between the two particles is zero, $-\varepsilon$ is the potential energy at the equilbrium separation, and $r$ is the distance between the two atoms. 
 The Pauli exclusion principle is repulsive and only present over very short distances modelled as, 
 
-$$ E_{\text{repulsive}}(r_{ij}) = \dfrac{A}{r_{ij}^{12}},$$
+$$ E_{\text{repulsive}}(r) = 4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^{12}\;,$$
 
-where $A$ is an interaction specific constant.
 The Python code below defines each of the components of the Lennard-Jones potential and the total energy of the interaction.
 These are then all plotted on a single graph. 
-The values of $A$ and $B$ are those associated with an argon-argon interaction, as defined by Rahman [[2](#references)].
+The values of $\sigma$ and $\varepsilon$ are those associated with an argon-argon interaction, as defined by Rahman [[2](#references)].
 
 
 
@@ -40,17 +40,19 @@ The values of $A$ and $B$ are those associated with an argon-argon interaction, 
 import numpy as np
 import matplotlib.pyplot as plt
 
-def attractive_energy(rij, b):
+def attractive_energy(r, epsilon, sigma):
     """
     Attractive component of the Lennard-Jones interaction
     energy.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond length (eV)
+    sigma: float 
+        Distance at which the potential energy is zero (Å)
     
     Returns
     -------
@@ -58,19 +60,21 @@ def attractive_energy(rij, b):
         Energy of attractive component of Lennard-Jones 
         interaction
     """
-    return -b / np.power(rij, 6)
+    return -4 * epsilon * np.power(sigma / r, 6)
 
-def repulsive_energy(rij, a):
+def repulsive_energy(r, epsilon, sigma):
     """
     Repulsive component of the Lennard-Jones interaction
     energy.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond length (eV)
+    sigma: float 
+        Distance at which the potential energy is zero (Å)
     
     Returns
     -------
@@ -78,38 +82,36 @@ def repulsive_energy(rij, a):
         Energy of repulsive component of Lennard-Jones 
         interaction
     """
-    return a / np.power(rij, 12)
+    return 4 * epsilon * np.power(sigma / r, 12)
 
-def lj_energy(rij, a, b):
+def lj_energy(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the energy of the interaction.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond length (eV)
+    sigma: float 
+        Distance at which the potential energy is zero (Å)
     
     Returns
     -------
     float
-        Energy of the interaction between i and j.
+        Energy of the van der Waals interaction
     """
-    return repulsive_energy(rij, a) + attractive_energy(rij, b)
+    return repulsive_energy(r, epsilon, sigma) + attractive_energy(r, epsilon, sigma)
 
-r = np.linspace(3e-10, 8e-10, 100)
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-ax.plot(r, attractive_energy(r, 9.273e-78), label='Attractive')
-ax.plot(r, repulsive_energy(r, 1.363e-134), label='Repulsive')
-ax.plot(r, lj_energy(r, 1.363e-134, 9.273e-78), label='Lennard-Jones')
-ax.set_xlabel(r'$r_{ij}$/m')
-ax.set_ylabel(r'$E$/J')
-ax.legend(frameon=False)
+r = np.linspace(3, 8, 100)
+plt.plot(r, attractive_energy(r, 0.0103, 3.4), label='Attractive')
+plt.plot(r, repulsive_energy(r, 0.0103, 3.4), label='Repulsive')
+plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
+plt.xlabel(r'$r$/Å')
+plt.ylabel(r'$E$/eV')
+plt.legend(frameon=False)
 plt.show()
 ```
 
@@ -126,10 +128,9 @@ Similar to the Lennard-Jones potential, the Buckingham models the attractive ter
 However, instead of a twelfth power repulsion term an exponential function is utilised instead. 
 The total Buckingham potential has the following form, 
 
-$$ E_{\text{Buckingham}}(r_{ij}) = A\exp{-Br_{ij}} - \dfrac{C}{r_{ij}^6}, $$
+$$ E_{\text{Buckingham}}(r) = A\exp{(-Br)} - \dfrac{C}{r^6}, $$
 
 where $A$, $B$, and $C$ are interaction specific parameters that must be determined. 
-N.B. these are not the same $A$ and $B$ as in the Lennard-Jones potential. 
 
 The Python code below allows the comparison between these two van der Waals potentials, using defined parameters for an argon-argon interaction [[2,3](#references)].
 
@@ -144,30 +145,28 @@ def buckingham_energy(rij, a, b, c):
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
+    r: float
+        Distance between two particles (Å)
     a: float 
-        A parameter for interaction between i and j
+        A parameter for the interaction (eV)
     b: float 
-        B parameter for interaction between i and j
+        B parameter for the interaction (eV)
     c: float 
-        C parameter for interaction between i and j
-    
+        C parameter for the interaction (eV)
+        
     Returns
     -------
     float
-        Energy of the interaction between i and j.
+        Energy of the van der Waals interaction
     """
-    return a * np.exp(-b * rij) - c / np.power(rij, 6)
+    return a * np.exp(-b * r) - c / np.power(r, 6)
 
-r = np.linspace(3e-10, 8e-10, 100)
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-ax.plot(r, buckingham_energy(r, 1.69e-15, 3.66e10, 1.02e-77), label='Buckingham')
-ax.plot(r, lj_energy(r, 1.363e-134, 9.273e-78), label='Lennard-Jones')
-ax.set_xlabel(r'$r_{ij}$/m')
-ax.set_ylabel(r'$E$/J')
-ax.legend(frameon=False)
+r = np.linspace(3, 8, 100)
+plt.plot(r, buckingham_energy(r, 10549.313, 3.66, 63.670), label='Buckingham')
+plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
+plt.xlabel(r'$r$/Å')
+plt.ylabel(r'$E$/eV')
+plt.legend(frameon=False)
 plt.show()
 ```
 

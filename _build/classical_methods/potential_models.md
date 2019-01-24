@@ -4,11 +4,11 @@ redirect_from:
 interact_link: content/classical_methods/potential_models.ipynb
 title: 'Potential models'
 prev_page:
-  url: /classical_methods/intro
-  title: 'Classical methods'
-next_page:
   url: /classical_methods/van_der_waals
   title: 'The van der Waals interaction'
+next_page:
+  url: /parameterisation/intro
+  title: 'Parameterisation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

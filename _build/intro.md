@@ -40,7 +40,7 @@ The "Thebelab" button will make the code blocks in the webpage interactive, they
 The Thebelab integration is still in beta and therefore will not work perfectly every time (it is known not to work for the pylj examples towards the end).
 When the Thebelab integration fails, please use the Interact button.
 
-If you would prefer to run the resource locally, details of how this can be achieved can be found [here](./local).
+If you would prefer to run the resource locally, details of how this can be achieved can be found [here](https://github.com/pythoninchemistry/sim_and_scat/blob/master/content/local.md).
 
 ## Code (in)efficiency
 

@@ -7,12 +7,12 @@ prev_page:
   url: /classical_methods/intro
   title: 'Classical methods'
 next_page:
-  url: /classical_methods/potential_models
-  title: 'Potential models'
+  url: /classical_methods/coulomb
+  title: 'Charged interactions'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-## The van der Waals interaction
+# The van der Waals interaction
 
 Previously, you were given the opportunity to observe particles that interact only through the van der Waals interaction. 
 In order to achieve this it is necessary to have a **potential model**, a mathematical function, that is capable of modeling such an interaction. 

@@ -26,6 +26,9 @@
   - title: The van der Waals interaction
     url: /classical_methods/van_der_waals
     not_numbered: true
+  - title: Charged interactions
+    url: /classical_methods/coulomb
+    not_numbered: true
   - title: Potential models
     url: /classical_methods/potential_models
     not_numbered: true

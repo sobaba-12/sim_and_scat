@@ -2,7 +2,7 @@
 
 **Classical molecular dynamics** (MD) is a common computational chemistry technique for studying complex systems, such as proteins, polymers, and battery materials [[1-4](#references)]. Alongside the interest in these and other applications, molecular dynamics is also a used to help analyse data obtained from elastic scattering instruments.
 
-This tutorial has been written to **introduce users of elastic-scattering techniques**, such as small angle scattering or diffraction, to classical molecular dynamics (MD) simulation. We hope that this tutorial can provide an accessible route for experimental researchers to **better understand some of the complexities and subtleties of MD simulation**, thereby helping these researchers to get more relevant information from their simulations.
+This tutorial has been written to **introduce users of elastic-scattering techniques**, such as small angle scattering or diffraction, to classical molecular dynamics (MD) simulation. We aim to provide an accessible route for experimental researchers to **better understand some of the complexities and subtleties of MD simulation**, thereby helping these researchers to get more relevant information from their simulations.
 
 This tutorial begins with an introduction to classical simulation methods, including a discussion of the development and parameterisation of classical interatomic potential models. We then provide an outline of traditional molecular dynamics simulation methods and discuss a number of important considerations users of MD simulation should be aware of. We close this tutorial with an illustrative practical example, using the open-source Lennard-Jones simulation package [`pylj`](http://pythoninchemistry.org/pylj) [[5,6](#references)], and discuss how a radially averaged scattering profile may be obtained **directly from simulation** via the Debye equation [[7](#references)].
 
@@ -13,7 +13,7 @@ We wish to emphasise that this tutorial is in **no way** a complete course on mo
 To get the most from this tutorial you will need:
 
 - Some basic understanding of the Python programming language (a great source for learning some Python is [pythoninchemistry.org](http://pythoninchemistry.org))
-- Some knowledge of undergraduate chemistry or physics may be required to fully appreciate the nature of classical potential models.
+- Some knowledge of undergraduate chemistry or physics is be required to fully appreciate the nature of classical potential models.
 - A decent understanding of advanced high school level mathematics.
 
 ## Using this resource
@@ -28,9 +28,11 @@ The "Thebelab" button will make the code blocks in the webpage interactive, they
 The Thebelab integration is still in beta and therefore will not work perfectly every time (it is known not to work for the pylj examples towards the end).
 When the Thebelab integration fails, please use the Interact button.
 
+If you would prefer to run the resource locally, details of how this can be achieved can be found [here](./local).
+
 ## Code (in)efficiency
 
-Please be aware that the Python code written in this tutorial has been written to prioritise understanding, above computational efficiency. Individual examples may therefore not be be the most efficient implementation of particular algorithms. That said, we have endeavoured to provide code examples that are “authentic”, and accurately represent the relevant aspects of “real” molecular dynamics methods.
+Please be aware that the Python code written in this tutorial has been written to prioritise understanding, above computational efficiency. Individual examples may therefore not be be the most efficient implementation of particular algorithms. That said, we have endeavoured to provide code examples that are *authentic*, and accurately represent the relevant aspects of *real* molecular dynamics methods.
 
 ## Sharing this resource
 
@@ -44,9 +46,10 @@ Please use the reference below, or download it has a [BibTeX file](./sim_and_sca
 
 This open educational resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) during his PhD at the University of Bath and Diamond Light Source.
 The following people contributed substantially to the resource:
+- [James Grant](https://orcid.org/0000-0003-1362-2055)
 - [Adam R. Symington](https://orcid.org/0000-0001-6059-497X)
 - [Tim Snow](https://orcid.org/0000-0001-7146-6885)
-- [James Grant](https://orcid.org/0000-0003-1362-2055)
+- James Doutch
 - [Benjamin J. Morgan](https://orcid.org/0000-0002-3056-8233)
 - [Stephen C. Parker](https://orcid.org/0000-0003-3804-0975)
 - [Karen J. Edler](https://orcid.org/0000-0001-5822-0127)

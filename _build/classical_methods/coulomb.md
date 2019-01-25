@@ -7,8 +7,8 @@ prev_page:
   url: /classical_methods/van_der_waals
   title: 'The van der Waals interaction'
 next_page:
-  url: /classical_methods/potential_models
-  title: 'Potential models'
+  url: /classical_methods/bonds
+  title: 'Bonds'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

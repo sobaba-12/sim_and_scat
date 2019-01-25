@@ -2,8 +2,8 @@
 interact_link: content/parameterisation/intro.ipynb
 title: 'Parameterisation'
 prev_page:
-  url: /classical_methods/potential_models
-  title: 'Potential models'
+  url: /classical_methods/bonds
+  title: 'Bonds'
 next_page:
   url: /parameterisation/off_the_shelf
   title: 'Off-the-shelf potentials'

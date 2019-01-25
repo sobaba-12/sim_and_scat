@@ -15,8 +15,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 In an effort to counter the problem of having to develop a new forcefield *every* time someone wanted to perform a molecular dynamics simulation, a variety of off-the-shelf potentials have been developed.
 These are *general* forcefields that as designed to be applied to any system.
 
-Although a potential model has been developed with the aim of *generality*, they should still be used with **severe** caution.
-The chemistry of your system may not directly match the system used in the potential generation, which can lead to extreme systematic errors in your the simulations.
+Although a potential model has been developed with the aim of *generality*, they should still be used with **caution**.
+The chemistry of your system may not directly match the system used in the potential generation, which can lead to systematic errors in your the simulations.
 
 Some examples of off-the-shelf potentials include:
 - AMBER: popular for DNA and proteins

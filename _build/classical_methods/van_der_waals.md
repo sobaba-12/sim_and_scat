@@ -103,7 +103,8 @@ def lj_energy(r, epsilon, sigma):
     float
         Energy of the van der Waals interaction
     """
-    return repulsive_energy(r, epsilon, sigma) + attractive_energy(r, epsilon, sigma)
+    return repulsive_energy(
+        r, epsilon, sigma) + attractive_energy(r, epsilon, sigma)
 
 r = np.linspace(3, 5, 100)
 plt.plot(r, attractive_energy(r, 0.0103, 3.4), label='Attractive')
@@ -162,7 +163,8 @@ def buckingham_energy(rij, a, b, c):
     return a * np.exp(-b * r) - c / np.power(r, 6)
 
 r = np.linspace(3, 5, 100)
-plt.plot(r, buckingham_energy(r, 10549.313, 3.66, 63.670), label='Buckingham')
+plt.plot(r, buckingham_energy(r, 10549.313, 3.66, 63.670), 
+         label='Buckingham')
 plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
 plt.xlabel(r'$r$/Å')
 plt.ylabel(r'$E$/eV')

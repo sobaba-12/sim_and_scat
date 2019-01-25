@@ -1,7 +1,7 @@
 ## Ensembles
 
 The molecular dynamics algorithm outlined in the previously makes use of the NVE ensemble (also known as the microcanonical ensemble), where the number of particles (N), volume of the system (V), and energy of the system (E) are all **kept constant**.
-This is not the only, or the most accurate, ensemble that exists, there is also other such as:
+This is not the only ensemble that exists, there is also other such as:
 - NVT (canonical): number of particles (N), volume of system (V), temperature of the simulation (T)
 - NPT (isothermal-isobaric): number of particles (N), pressure of system (P), temperature of the simulation (T)
 
@@ -31,6 +31,6 @@ We will not discuss barostats any further, but there is plenty of information in
 1. McCluskey, A. R.; Morgan, B. J.; Edler, K. J.; Parker, S. C. *J. Open Source Educ.* 2018, **1** (2), 19. [10.21105/jose.00019](https://doi.org/10.21105/jose.00019).
 2. McCluskey, A. R.; Symington, A. R. [10.5281/zenodo.2423866](http://doi.org/10.5281/zenodo.2423866).
 3. Andersen, H. C. *J. Chem. Phys.* 1980, **72** (4), 2384–2393. [10.1063/1.439486](https://doi.org/10.1063/1.439486).
-4. Nosé, S. *J. Chem. Phys.* 1984, **81** (1), 511–519. [10.1063/1.447334](https://doi.org/10.1063/1.44733410.1063/1.447334.
+4. Nosé, S. *J. Chem. Phys.* 1984, **81** (1), 511–519. [10.1063/1.447334](https://doi.org/10.1063/1.447334).
 5. Berendsen, H. J. C.; Postma, J. P. M.; van Gunsteren, W. F.; DiNola, A.; Haak, J. R. *J. Chem. Phys.* 1984, **81** (8), 3684–3690. [10.1063/1.448118](https://doi.org/10.1063/1.448118).
 6. Hoover, W. G. *Phys. Rev. A* 1985, **31** (3), 1695–1697. [10.1103/PhysRevA.31.1695](https://doi.org/10.1103/PhysRevA.31.1695).

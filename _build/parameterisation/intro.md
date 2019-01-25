@@ -13,19 +13,17 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 # Parameterisation
 
 Once the potential energy function to be used for a particular interaction has been determined, it is then necessary to **parameterise** the function. 
-If we think back to the classical electrostatic interaction between two oppositely charged point particles, we would set the values of $q_i$ and $q_j$ to be 1 and -1, for modelling the interaction between a sodium and chloride ion pair. 
-This was the parameterisation step for that system. 
 
-For an ion pair with integer charges this is straight-forward. 
-However, consider modelling the potential energy between a carbonyl oxygen atom of a hydrocarbon molecule and the hydrogen atom of a water molecule. 
-Both of these have some charged character, however, this is **ill defined**, but must be accounted for.
-
-The difficulty of deducing the correct parameterisation is inherent to **all** potential energy functions. 
-For the Lennard-Jones function, the parameterisation involves determining the best possible values for $A$ and $B$. 
+If we consider the Lennard-Jones potential model.
+In this model it is necessary to determine two parameters, $\sigma$ and $\varepsilon$. 
+$\sigma$ is the distance at which the potential energy between the two particles is zero, $-\varepsilon$ is the potential energy at the equilbrium separation. 
+Both of these numbers must be determined for a pair of atoms. 
+This is achieved by **parameterisation**.
 
 ## How to parameterise a potential model?
 
 The purpose of parameterisation is to create a potential energy model that is able to **accurately reproduce** the energy of a given interaction. 
+This may also be thought of as the model that reproduces the structure accurately. 
 This means that the parameters should really be obtained by optimising them with respect to a **more accurate** technique than classical simulation. 
 Commonly this involves either experimental measurements, e.g. X-ray crystallography, or quantum mechanical calculations; we will be focusing on the latter. 
 
@@ -34,7 +32,7 @@ However, for our current purposes we only need to remember that quantum calculat
 
 ### Quantum mechanical calculations
 
-These are more accurate then classical simulations. However, they are severely limited in the system size, with a maximum simulation size in the order of hundreds atoms. 
+These are more accurate then classical simulations. However, they are severely limited in the system size, with a maximum simulation size in the order of hundreds or thousands of atoms. 
 
 ### Parameterising a Lennard-Jones interaction
 
@@ -50,15 +48,13 @@ The Python code below plots the energy vs distances that may be obtained from a 
 import matplotlib.pyplot as plt
 import numpy as np
 
-rij = [3e-10, 4e-10, 5e-10, 6e-10, 7e-10, 8e-10]
-energy = [127.27e-22, -13.52e-22, -6.37e-22, -1.42e-22, -0.58e-22, -0.25e-22]
-energy_err = [12.92e-22, 1.45e-22, 0.54e-22, 0.19e-22, 0.08e-22, 0.04e-22]
+r = [3, 4, 5, 6, 7, 8]
+energy = [0.0794, -0.0084, -0.0040, -0.0009, -0.0004, -0.0002]
+energy_err = [81e-04, 9e-04, 3e-04, 1e-04, 1e-04, 1e-04]
 
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-ax.errorbar(rij, energy, yerr=energy_err, marker='o', ls='')
-ax.set_xlabel(r'$r_{ij}$/m')
-ax.set_ylabel(r'$E$/J')
+plt.errorbar(r, energy, yerr=energy_err, marker='o', ls='')
+plt.xlabel(r'$r$/Å')
+plt.ylabel(r'$E$/eV')
 plt.show()
 ```
 
@@ -79,37 +75,38 @@ It is possible to then fit a Lennard-Jones function to this data, the Python cod
 ```python
 from scipy.optimize import curve_fit
 
-def lj_energy(rij, a, b):
+def lj_energy(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the energy of the interaction.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond length (eV)
+    sigma: float 
+        Distance at which the potential energy is zero (Å)
     
     Returns
     -------
     float
-        Energy of the interaction between i and j.
+        Energy of the van der Waals interaction
     """
-    return a / np.power(rij, 12) - b / np.power(rij, 6)
-    
-popt, pcov = curve_fit(lj_energy, rij, energy, sigma=energy_err)
-print('Best value for a = {:.2e} J/m12'.format(popt[0]))
-print('Best value for b = {:.2e} J/m6'.format(popt[1]))
+    return 4 * epsilon * np.power(
+        sigma / r, 12) - 4 * epsilon * np.power(sigma / r, 6)
+
+popt, pcov = curve_fit(lj_energy, r, energy, sigma=energy_err)
+print('Best value for ε = {:.2e} eV'.format(popt[0]))
+print('Best value for σ = {:.2f} Å'.format(popt[1]))
 ```
 
 
 {:.output .output_stream}
 ```
-Best value for a = 1.25e-134 J/m12
-Best value for b = 8.17e-78 J/m6
+Best value for ε = 9.15e-03 eV
+Best value for σ = 3.38 Å
 
 ```
 
@@ -120,13 +117,11 @@ However, there is some deviation at 4 and 5 Å and therefore more quantum mechni
 
 {:.input_area}
 ```python
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-ax.errorbar(rij, energy, yerr=energy_err, marker='o', ls='')
-x = np.linspace(3e-10, 8e-10, 1000)
-ax.plot(x, lj_energy(x, popt[0], popt[1]))
-ax.set_xlabel(r'$r_{ij}$/m')
-ax.set_ylabel(r'$E$/J')
+plt.errorbar(r, energy, yerr=energy_err, marker='o', ls='')
+x = np.linspace(3, 8, 1000)
+plt.plot(x, lj_energy(x, popt[0], popt[1]))
+plt.xlabel(r'$r$/Å')
+plt.ylabel(r'$E$/eV')
 plt.show()
 ```
 
@@ -140,7 +135,7 @@ plt.show()
 Note that it would be necessary to carry out this process for **every** interaction in your calculation, e.g. bond lengths, bond angles, dihedral angles, van der Waals and Coulombic interactions forces, etc. 
 Furthermore, it is important to remember the **different chemistry** that is present for each atom. 
 For example, a carbon atom in a carbonyl group will not act the same as the carbon atom in a methane molecule. 
-To carry out these calculations for *every* molecular dynamics simulation that you wish to perform very quickly becomes highly unfeasible.
+To carry out these calculations for *every* molecular dynamics simulation that you wish to perform very quickly becomes highly unfeasible if we want to apply classical simulation regularly.
 
 ## References
 

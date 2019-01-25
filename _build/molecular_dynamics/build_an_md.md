@@ -193,5 +193,6 @@ plt.show()
 
 
 
-Generally the particles will follow each other through space. 
+The particles appear to follow each other through space.
+This can be thought of as the particles all sitting in the potential energy minimum of the Lennard-Jones model.
 It is possible to run the simulation at a series of different initial starting positions by varying values in the array `x`. 

@@ -17,7 +17,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 Now that we have introduced the classical potential models, and how these models are obtained, we can start to look at the dynamics of the system. 
 
 ## Force and acceleration
-The particles that we study are classical in nature, and therefore it is possible to apply classical mechanics to rationalise their dynamic behaviour. 
+The particles that we study are classical in nature, because we apply classical mechanics to rationalise their dynamic behaviour. 
 For this the starting point is **Newton's second law of motion**, 
 
 $$ \mathbf{f} = m\mathbf{a}, $$
@@ -39,33 +39,32 @@ The force between the atoms is then plotted.
 import numpy as np
 import matplotlib.pyplot as plt
 
-def lj_force(rij, a, b):
+def lj_force(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the force of the interaction.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond length (eV)
+    sigma: float 
+        Distance at which the potential energy is zero (Å)
     
     Returns
     -------
     float
-        Force of the interaction between i and j.
+        Force of the van der Waals interaction.
     """
-    return 12 * a / np.power(rij, 13) - 6 * b / np.power(rij, 7)
+    return 48 * epsilon * np.power(
+        sigma / r, 13) - 24 * epsilon * np.power(sigma / r, 7)
     
-r = np.linspace(3.5e-10, 8e-10, 100)
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-ax.plot(r, lj_force(r, 1.363e-134, 9.273e-78))
-ax.set_xlabel(r'$r_{ij}$/m')
-ax.set_ylabel(r'$f$/N')
+r = np.linspace(3.5, 8, 100)
+plt.plot(r, lj_force(r,  0.0103, 3.4))
+plt.xlabel(r'$r$/Å')
+plt.ylabel(r'$f$/eVÅ$^{-1}$')
 plt.show()
 ```
 
@@ -78,23 +77,22 @@ plt.show()
 
 You may have noticed that in Newton's second law of motion, the force is a vector quantity, whereas the first negative derivative of the energy is a scalar.
 This means that it is necessary to convert to obtain the force vector for the relevant dimensionality. 
-This is achieved by multiplication by the unit vector in each dimension,
+This is achieved by multiplication by the unit vector in that direction,
 
 $$ \mathbf{f}_x = f\hat{\mathbf{r}}_x\text{, where }\hat{\mathbf{r}}_x = \dfrac{r_x}{|\mathbf{r}|}. $$
 
 In the above equation, $r_x$ is the distance between the two particles in the $x$-dimension and $\mathbf{r}$ is the overall distance vector. 
-The above equation must be determined to find the force in each dimension. 
-However, currently we will **only** consider particles interacting in a one-dimensional space. 
+This must be performed in each dimension being considered. 
+Currently, we will **only** consider particles interacting in a one-dimensional space. 
 
 The Python code below shows how to determine the acceleration on each atom of argon due to each other atom of argon. 
-Due to Newton's third law, we are able to **increase the efficiency** of this algorithm as the force on atom $i$ will be equal and opposite to the force on atom $j$. 
+It is possible to **increase the efficiency** of this algorithm by applying Newton's third law, e.g. the force on atom $i$ will be equal and opposite to the force on atom $j$. 
 
 
 
 {:.input_area}
 ```python
 mass_of_argon = 39.948 # amu
-mass_of_argon_kg = mass_of_argon * 1.6605e-27
 
 def get_accelerations(positions):
     """
@@ -118,30 +116,30 @@ def get_accelerations(positions):
         for j in range(i + 1, positions.size):
             r_x = positions[j] - positions[i]
             rmag = np.sqrt(r_x * r_x)
-            force_scalar = lj_force(rmag, 1.363e-134, 9.273e-78)
+            force_scalar = lj_force(rmag, 0.0103, 3.4)
             force_x = force_scalar * r_x / rmag
-            accel_x[i, j] = force_x / mass_of_argon_kg
-            accel_x[j, i] = - force_x / mass_of_argon_kg
+            accel_x[i, j] = force_x / mass_of_argon #eV Å-1 amu-1
+            accel_x[j, i] = - force_x / mass_of_argon
     return np.sum(accel_x, axis=0)
 
-accel = get_accelerations(np.array([1e-10, 5e-10, 10e-10]))
-print('Acceleration on particle 0 = {:.3e} m/s'.format(accel[0]))
-print('Acceleration on particle 1 = {:.3e} m/s'.format(accel[1]))
-print('Acceleration on particle 2 = {:.3e} m/s'.format(accel[2]))
+accel = get_accelerations(np.array([1, 5, 10]))
+print('Acceleration on particle 0 = {:.3e} eV/Åamu'.format(accel[0]))
+print('Acceleration on particle 1 = {:.3e} eV/Åamu'.format(accel[1]))
+print('Acceleration on particle 2 = {:.3e} eV/Åamu'.format(accel[2]))
 ```
 
 
 {:.output .output_stream}
 ```
-Acceleration on particle 0 = 1.463e+14 m/s
-Acceleration on particle 1 = -5.736e+13 m/s
-Acceleration on particle 2 = -8.891e+13 m/s
+Acceleration on particle 0 = 4.942e-04 eV/Åamu
+Acceleration on particle 1 = -1.536e-04 eV/Åamu
+Acceleration on particle 2 = -3.405e-04 eV/Åamu
 
 ```
 
 ## Integration
 
-Now that we have seen how to obtain the acceleration on our particles, we can consider applying the **Newtonian equations of motion** to probe the particles trajectory, 
+Now that we have seen how to obtain the acceleration on our particles, we can apply the **Newtonian equations of motion** to probe the particles trajectory, 
 
 $$ \mathbf{x}_i(t + \Delta t) = \mathbf{x}_i(t) + \mathbf{v}_i(t)\Delta t + \dfrac{1}{2} \mathbf{a}_i(t)\Delta t^2, $$
 
@@ -150,13 +148,13 @@ $$ \mathbf{v}_i(t + \Delta t) = \mathbf{v}_i(t) + \dfrac{1}{2}\big[\mathbf{a}_i(
 where, $\Delta t$ is the timestep (how far in time is incremented), $\mathbf{x}_i$ is the particle position, $\mathbf{v}_i$ is the velocity, and $\mathbf{a}_i$ the acceleration. 
 This pair of equations is known as the Velocity-Verlet algorithm, which can be written as:
 
-1. Find the position of the particle after some timestep
-2. Calculate the force (and therefore acceleration) on the particle
-3. Determine a new velocity for the particle, based on the average acceleration at the current and new positions
-4. Overwrite the old acceleration values with the new ones, $\mathbf{a}_i(t) = \mathbf{a}_i(t+\Delta t)$
+1. Calculate the force (and therefore acceleration) on the particle
+2. Determine a new velocity for the particle, based on the average acceleration at the current and new positions
+3. Overwrite the old acceleration values with the new ones, $\mathbf{a}_i(t) = \mathbf{a}_i(t+\Delta t)$
+4. Find the position of the particle after some timestep
 5. Go to 1
 
-This process can be continued for as long as is required to get **good statistics** for the quantity you are intereseting in (or for as long as you can wait for/afford to run the computer for). 
+After the initial relaxation of the particles to equilibrium, this process can be continued for as long as is required to get **good statistics** for the quantity you are intereseting in. 
 
 The Python code below is a set of two function for the above equations, these will be applied later.
 
@@ -213,12 +211,11 @@ def update_velo(v, a, a1, dt):
 
 
 The above process is called the intergration step, and Velocity-Verlet is the **integrator**. 
-In essence, the function that is being integrated is the acceleration on the particular atom at a given time. 
-This function is highly non-linear for more than one particle. 
+This function is highly non-linear for more than two particles. 
 The result is that the integration step will only be valid for very small values of $\Delta t$, e.g. if a large timestep is used the acceleration calculated will not be accurate as the forces on the atom will change too significantly during it. 
 The value for the timestep is usually on the order of 10<sup>-15</sup> s (femtoseconds). 
 So in order to measure a nanosecond of "real-time" molecular dynamics, 1&nbsp;000&nbsp;000 (one million) iterations of the above algorithm must be performed. 
-This can take a **very, very long time** for large, realistic systems.
+This can be very slow for large, realistic systems.
 
 ## Initialisation
 
@@ -234,14 +231,7 @@ The particle velocities are more general, as the total kinetic energy, $E_K$ of 
 $$ E_K = \sum_{i=1}^N \dfrac{m_i|v_i|^2}{2} = \dfrac{3}{2}Nk_BT, $$
 
 where, $m_i$ is the mass of particle $i$, $N$ is the number of particles, and $k_B$ is the Boltzmann constant. 
-Based on this information, the **most common way** to obtain initial velocities is to assign random values and then scale them dependent on the temperature of the system. 
-For example, in a common method for the initial velocity determinaiton is as follows, 
-
-$$ v_i = R_i \sqrt{\dfrac{k_BT}{m_i}}, $$
-
-where $R_i$ is some random number between $-0.5$ and $0.5$, $k_B$ is the Boltzmann constant, $T$ is the temperature, and $m_i$ is the mass of the particle.
-
-This method is implemented in the Python function below. 
+A common method to initialise the velocities is implemented in the Python function below. 
 
 
 

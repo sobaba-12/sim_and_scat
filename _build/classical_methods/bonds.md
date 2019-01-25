@@ -78,6 +78,10 @@ $$ E_{\text{angle}}(\theta) = \frac{K_\theta}{2}(\theta - \theta_0)^2, $$
 where, $\theta$ is the measured angle, $K_\theta$ is the force constant for the harmonic well, and $\theta_0$ is the equilibrium angle size. 
 This has the same shape as the bond potential energy curve shown above.
 
+Activate the interactive MyBinder environment (by clicking the "Interact" button at the top). 
+This will allow the code cell below to be run. 
+This simulation shows a single diatomic molecule interacting through a bond, you can vary the temperature of the simulation and observe how the bond vibration changes. 
+
 
 
 {:.input_area}

@@ -29,8 +29,8 @@
   - title: Charged interactions
     url: /classical_methods/coulomb
     not_numbered: true
-  - title: Potential models
-    url: /classical_methods/potential_models
+  - title: Bonds
+    url: /classical_methods/bonds
     not_numbered: true
 
 - title: Parameterisation

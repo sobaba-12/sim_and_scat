@@ -14,7 +14,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 # Using pylj
 
-pylj is an open-source tool for **enabling interaction between students** (the user of this tutorials) and molecular dynamics simulations [[1,2](#references)]. 
+pylj is an open-source tool to **enable interaction between students** (the users of this resource) and molecular dynamics simulations [[1,2](#references)]. 
 This software enables the simulation of argon atoms in a two-dimensional box. 
 The Python code below runs a pylj molecular dynamics simulation. 
 
@@ -27,7 +27,8 @@ from pylj import md, sample
 def md_simulation(number_of_particles, temperature, box_length, 
                   number_of_steps, sample_frequency):
     """
-    Runs a molecular dynamics simulation in suing the pylj molecular dynamics engine.
+    Runs a molecular dynamics simulation in suing the pylj 
+    molecular dynamics engine.
     
     Parameters
     ----------
@@ -50,7 +51,8 @@ def md_simulation(number_of_particles, temperature, box_length,
     # Creates the visualisation environment
     %matplotlib notebook
     # Initialise the system
-    system = md.initialise(number_of_particles, temperature, box_length, 'square')
+    system = md.initialise(number_of_particles, temperature, 
+                           box_length, 'square')
     # This sets the sampling class
     sample_system = sample.JustCell(system)
     # Start at time 0
@@ -60,14 +62,16 @@ def md_simulation(number_of_particles, temperature, box_length,
         # Run the equations of motion integrator algorithm, this 
         # includes the force calculation
         system.integrate(md.velocity_verlet)
-        # Sample the thermodynamic and structural parameters of the system
+        # Sample the thermodynamic and structural parameters 
+        # of the system
         system.md_sample()
         # Allow the system to interact with a heat bath
         system.heat_bath(temperature)
         # Iterate the time
         system.time += system.timestep_length
         system.step += 1
-        # At a given frequency sample the positions and plot the RDF
+        # At a given frequency sample the positions and plot 
+        # the RDF
         if system.step % sample_frequency == 0:
             sample_system.update(system)
     return system

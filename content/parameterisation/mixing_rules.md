@@ -11,8 +11,8 @@ These are as follows,
 
 $$ \sigma_{ij} = \dfrac{\sigma_{ii} + \sigma_{jj}}{2} \;\;\;\text{and}\;\;\; \varepsilon_{ij} = \sqrt{\varepsilon_{ii}\varepsilon_{jj}}. $$
 
-As with the determination of the potentials itself, the ways in which these potentials can be mixed can vary massively and there is no single rule for all systems.
-To give a flavour of the variation possible, the Wikipedia entry on [combining rules](https://en.wikipedia.org/wiki/Combining_rules) provides an introduction into some of the rule sets commonly employed.
+As with the determination of the potentials itself, the ways in which these potentials can be mixed can vary considerably and there is no single rule for all systems.
+To give further insight into the variation possible, the Wikipedia entry on [combining rules](https://en.wikipedia.org/wiki/Combining_rules) provides an introduction into some of the rule sets commonly employed.
 
 ## References
 

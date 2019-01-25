@@ -111,7 +111,7 @@ Best value for σ = 3.38 Å
 ```
 
 If we plot a Lennard-Jones function with the values fitted and the quantum mechnical data on a single plot, we can see that there is **relatively good agreement** between the two. 
-However, there is some deviation at 4 and 5 Å and therefore more quantum mechnical calculations would **required** to produce a truely accurate forcefield. 
+However, there is some deviation at 4 and 5 Å indicating more quantum mechnical calculations would **required** to produce a truely representative forcefield. 
 
 
 
@@ -132,9 +132,9 @@ plt.show()
 
 
 
-Note that it would be necessary to carry out this process for **every** interaction in your calculation, e.g. bond lengths, bond angles, dihedral angles, van der Waals and Coulombic interactions forces, etc. 
+Note that it would be necessary to carry out this process for **every** interaction in your system, e.g. bond lengths, bond angles, dihedral angles, van der Waals and Coulombic interactions forces, etc. 
 Furthermore, it is important to remember the **different chemistry** that is present for each atom. 
-For example, a carbon atom in a carbonyl group will not act the same as the carbon atom in a methane molecule. 
+For example, a carbon atom in a carbonyl group will not display the same behaviour as the carbon atom in a methane molecule. 
 To carry out these calculations for *every* molecular dynamics simulation that you wish to perform very quickly becomes highly unfeasible if we want to apply classical simulation regularly.
 
 ## References

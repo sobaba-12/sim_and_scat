@@ -36,7 +36,7 @@ Various **other methods** for thermostatting exist, such as the Anderson, Nosé-
 
 In order to achieve the NPT ensemble, it is necessary to use a **barostat** in addition to a thermostat.
 These allow the volume of the system to vary such that the pressure is constant throughout the simulation.
-We will not discuss barostats any further, but there is plenty of information in more detailed texts.
+We will not discuss barostats any further, the interested reader is directed to more detailed texts on the subject.
 
 ## References
 

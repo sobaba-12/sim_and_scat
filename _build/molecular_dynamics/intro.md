@@ -14,7 +14,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 # Molecular Dynamics
 
-Now that we have introduced the classical potential models, and how these models are obtained, we can start to look at the dynamics of the system. 
+We have introduced the classical potential models, and and derived and introduced their basic properties, we can start to look at the dynamics of the system. 
 
 ## Force and acceleration
 The particles that we study are classical in nature, because we apply classical mechanics to rationalise their dynamic behaviour. 
@@ -221,10 +221,10 @@ This can be very slow for large, realistic systems.
 
 There are only **two tools** left that we need to run a molecular dynamics simulation, and both are associated with the original configuration of the system; the original particle positions, and the original particle velocities. 
 
-The particle positions are usually either taken from some library of structures (e.g. the protein data bank if you are simulating proteins) or based on some knowledge of the system (e.g. CaF<sub>2</sub> is known to have a face-centred cubic structure). 
-For complex, multicomponent systems software, such as Packmol [1], may be used to build up the structure from its constituent parts.
+The particle positions are usually either taken from some library of structures (e.g. the [protein data bank](http://www.rcsb.org) if you are simulating proteins) or based on some knowledge of the system (e.g. CaF<sub>2</sub> is well known to have a face-centred cubic structure). 
+For complex, multicomponent systems, software such as Packmol [1] may be used to build up the structure from its constituent parts.
 The importance of this initial structure **cannot be overstated**.
-For example if the initial structure is very far form the equilibrium structure, it may take a very long time before the equilibrium structure is obtained, possibly much longer than can be reasonably simulated. 
+For example if the initial structure is uinrepresentative of the equilibrium structure, it may take a very long time before the equilibrium structure is obtained, possibly much longer than can be reasonably simulated. 
 
 The particle velocities are more general, as the total kinetic energy, $E_K$ of the system (and therefore the particle velocities) are dependent on the temperature of the simulation, $T$. 
 

@@ -185,9 +185,3 @@ ax.legend(frameon=False)
 plt.show()
 ```
 
-
-
-{:.output .output_png}
-![png](../images/molecular_dynamics/exercise_1_0.png)
-
-

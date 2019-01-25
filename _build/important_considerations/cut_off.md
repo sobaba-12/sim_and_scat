@@ -14,7 +14,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 ## Cut-offs
 
-If we plot the Lennard-Jones potential all the way out to 15 Å, it will look something like this.
+Plotting the Lennard-Jones potential across a very large distance will give something similar to that shown below. 
 
 
 

@@ -93,4 +93,4 @@ bond.simulation(300)
 
 
 For the sake of simplicity, the remainder of this resource will only focus on non-bonded interactions. 
-However, it is important to be aware that all aspects mentioned are **equally applicable** to bonded interactions.
+However, it is important to be aware that all aspects discussed are **equally applicable** to bonded interactions.

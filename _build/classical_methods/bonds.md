@@ -65,12 +65,28 @@ plt.show()
 ```
 
 
+
+{:.output .output_png}
+![png](../images/classical_methods/bonds_1_0.png)
+
+
+
 The potential energy of an angle between two atoms that are separated by a third is modeled with a similar harmonic function, 
 
 $$ E_{\text{angle}}(\theta) = \frac{K_\theta}{2}(\theta - \theta_0)^2, $$
 
 where, $\theta$ is the measured angle, $K_\theta$ is the force constant for the harmonic well, and $\theta_0$ is the equilibrium angle size. 
 This has the same shape as the bond potential energy curve shown above.
+
+
+
+{:.input_area}
+```python
+import bond
+%matplotlib notebook
+bond.simulation(300)
+```
+
 
 For the sake of simplicity, the remainder of this resource will only focus on non-bonded interactions. 
 However, it is important to be aware that all aspects mentioned are **equally applicable** to bonded interactions.

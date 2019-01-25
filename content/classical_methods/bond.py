@@ -29,26 +29,18 @@ def bond(dr, constants, force=False):
         The potential energy or force between the particles.
     """
     if force:
-        return constants[0] * (np.abs(dr) - constants[1])
+        return -constants[0] * (np.abs(dr) - constants[1])
     else:
         return constants[0] / 2. * np.power((dr - constants[1]), 2)
 
-def simulation(temperature, a, b):
+def simulation(temperature):
     """
     Runs a molecular dynamics simulation in suing the pylj molecular dynamics engine.
 
     Parameters
     ----------
-    number_of_particles: int
-        The number of particles in the simulation
     temperature: float
         The temperature for the initialisation and thermostating
-    box_length: float
-        The length of the simulation square
-    number_of_steps: int
-        The number of molecular dynamics steps to run
-    sample_frequency:
-        How regularly the visualisation should be updated
 
     Returns
     -------
@@ -56,13 +48,13 @@ def simulation(temperature, a, b):
         The complete system information from pylj
     """
     # Initialise the system
-    system = md.initialise(2, 1, 31, 'square', timestep_length=5e-16,
-                           constants=[a, b], forcefield=bond)
+    system = md.initialise(2, temperature, 10, 'square',
+                           constants=[440.5, 1.522e-10)], forcefield=bond)
     system.cut_off = 30
-    system.particles['xposition'] = [20e-10, 22e-10]
-    system.particles['yposition'] = [20e-10, 22e-10]
+    system.particles['xposition'] = [5e-10, 6e-10]
+    system.particles['yposition'] = [5e-10, 6e-10]
     # This sets the sampling class
-    sample_system = sample.Energy(system, size='small')
+    sample_system = sample.JustCell(system, scale=2)
     # Start at time 0
     system.time = 0
     # Begin the molecular dynamics loop

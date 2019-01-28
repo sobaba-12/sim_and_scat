@@ -1,20 +1,20 @@
 # The interaction between simulation and scattering
 
-**Classical molecular dynamics** (MD) is a common computational chemistry technique for studying complex systems, such as proteins, polymers, and energy materials [[1-4](#references)]. Alongside the interest in these and other applications, molecular dynamics is also a used to aid the analysis of data obtained from elastic scattering instruments.
+**Classical molecular dynamics** (MD) is a common computational chemistry technique for studying complex systems, such as proteins, polymers, and energy materials [[1-4](#references)]. Alongside the interest in these, and other applications, MD is also a used to aid the analysis of data obtained from elastic scattering instruments.
 
-This tutorial has been written to **introduce users of elastic-scattering techniques**, such as small angle scattering or diffraction, to classical molecular dynamics (MD) simulation. We aim to provide an accessible route for experimentalists to **better understand some of the complexities and subtleties of MD simulation**, thereby aiding these researchers in extracting additional information from theiry data via simulation.
+This tutorial has been written to **introduce users of elastic-scattering techniques**, such as small angle scattering or diffraction, to classical MD simulation. We aim to provide an accessible route for experimentalists to **better understand some of the complexities and subtleties of MD simulation**, thereby aiding these researchers in extracting additional information from their experimental data via simulation.
 
-This tutorial begins with an introduction to classical simulation methods, including a discussion of the development and parameterisation of classical interatomic potential models. We then provide an outline of traditional molecular dynamics simulation methods and discuss a number of important considerations users of MD simulation should be aware of. We close this tutorial with an illustrative practical example, using the open-source Lennard-Jones simulation package [`pylj`](http://pythoninchemistry.org/pylj) [[5,6](#references)], and discuss how a radially averaged scattering profile may be obtained **directly from simulation** via the Debye equation [[7](#references)].
+This tutorial begins with an introduction to classical simulation methods, including a discussion of the development and parameterisation of classical interatomic potential models. We then provide an outline of traditional MD simulation methods and discuss a number of important considerations users of MD simulation should be aware of. We close this tutorial with an illustrative practical example, using the open-source Lennard-Jones simulation package [`pylj`](http://pythoninchemistry.org/pylj) [[5,6](#references)], and discuss how a radially averaged scattering profile may be obtained **directly from simulation** via the Debye equation [[7](#references)].
 
-We wish to emphasise that this tutorial is in **no way** a complete course on molecular dynamics, and would direct the interested reader to one of the many detailed textbooks on this subject [[8-12](#references)]. Rather, it is our hope that this tutorial provides a simple, practical, **general introduction to new, or future, users of MD methods within the scattering community**.
+We wish to emphasise that this tutorial is in **no way** a complete course on classical simulation or MD, and would direct the interested reader to one of the many detailed textbooks on this subject [[8-12](#references)]. Rather, it is our hope that this tutorial provides a simple, practical, and **general introduction to new, or future, users of MD methods within the scattering community**.
 
 ## Prerequisites
 
 To get the most from this tutorial you will need:
 
 - Some basic understanding of the Python programming language (a great source for learning some Python is [pythoninchemistry.org](http://pythoninchemistry.org))
-- Some knowledge of undergraduate chemistry or physics is be required to fully appreciate the nature of classical potential models.
-- A commensurate understanding of mathematics.
+- Some knowledge of undergraduate chemistry or physics is required to fully appreciate the nature of classical potential models
+- A commensurate understanding of mathematics
 
 ## Using this resource
 
@@ -24,15 +24,15 @@ Each page that contains interactive content will have the following two buttons 
 ![](./images/thebebinder.png)
 
 Selecting the "Interact" button will open a Jupyter Notebook version of the page running on the [MyBinder](https://mybinder.org) resource in a new tab.
-The "Thebelab" button will make the code blocks in the webpage interactive, they can be run, edited, and re-run.
-The Thebelab integration is still in beta and therefore will not work perfectly every time (it is known not to work for the pylj examples towards the end).
+The "Thebelab" button will make the code blocks in the webpage interactive, such that they can be run, edited, and re-run.
+The Thebelab integration is still in *beta* and therefore will not work perfectly every time (it is known not to work for the pylj examples).
 When the Thebelab integration fails, please use the Interact button.
 
 If you would prefer to run the resource locally, details of how this can be achieved can be found [here](https://github.com/pythoninchemistry/sim_and_scat/blob/master/content/local.md).
 
 ## Code (in)efficiency
 
-Please be aware that the Python code written in this tutorial has been written to prioritise understanding, above computational efficiency. 
+Please be aware that the Python code in this tutorial has been written to prioritise understanding, above computational efficiency. 
 Individual examples may therefore not be be the most efficient implementation of particular algorithms. 
 However, we have endeavoured to provide code examples that are *authentic*, and accurately represent the relevant aspects of *real* molecular dynamics methods.
 
@@ -42,12 +42,12 @@ This is an open educational resource, shared under a [CC BY-SA 4.0 license](./LI
 This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
 Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
 Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
-> McCluskey, A. R. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
+> McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
 
 ## Authors
 
 This open educational resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) during his PhD at the University of Bath and Diamond Light Source.
-The following people contributed substantially to the resource:
+The resource benefitted substantially from the hard-work and input of the following people:
 - [James Grant](https://orcid.org/0000-0003-1362-2055)
 - [Adam R. Symington](https://orcid.org/0000-0001-6059-497X)
 - [Tim Snow](https://orcid.org/0000-0001-7146-6885)

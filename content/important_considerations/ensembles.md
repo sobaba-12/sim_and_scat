@@ -5,9 +5,9 @@ This is not the only ensemble that exists, there is also other such as:
 - NVT (canonical): number of particles (N), volume of system (V), temperature of the simulation (T)
 - NPT (isothermal-isobaric): number of particles (N), pressure of system (P), temperature of the simulation (T)
 
-For both the canonical and isothermal-isobaric ensembles, it is necessary to determine a method to **modulate the temperature** of the system.
+For these ensembles, it is necessary to determine a method to **modulate the temperature** of the system.
 The temperature can be modulated using a variety of methods known as thermostating.
-The simplest, although one of the least accruate, is velocity rescaling.
+The simplest, although not neccesarily the best, is velocity rescaling.
 This is where the velocities of the individual particles are changed such that the kinetic energy of the total system more accurately matches that necessary for the desired temperature.
 For this the instaneous temperature of the system, $T_{\text{inst}}$, is defined as,
 
@@ -20,7 +20,7 @@ $$ v_i = v_i \sqrt{\dfrac{T_{\text{target}}}{\bar{T}}}, $$
 
 where $T_{\text{target}}$ is the target temperature for the themostat, and $\bar{T}$ is the average simulation temperature.
 pylj [[1,2](#references)], the software that you shall use later uses this method for producing an NVT simulation, using the `heat_bath` function.
-Various **other methods** for thermostatting exist, such as the Anderson, Nosé-Hoover, or the Berendsen [[3-6](#references)].
+Various **other methods** for thermostatting exist, such as the Anderson, Nosé-Hoover, or the Berendsen methods [[3-6](#references)].
 
 In order to achieve the NPT ensemble, it is necessary to use a **barostat** in addition to a thermostat.
 These allow the volume of the system to vary such that the pressure is constant throughout the simulation.

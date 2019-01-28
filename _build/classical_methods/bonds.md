@@ -19,15 +19,15 @@ However, to truely probe the chemistry of a system we must also be able to model
 
 The potential energy of the bonded interactions of a system is usually made up of bonds, angles, dihedrals, and other higher order processes,
 
-$$ E_{\text{bonded}} = E_{\text{bond}}(\mathbf{r}) + E_{\text{angle}}(\theta) + E_{\text{dihedral}}(\phi) + \ldots . $$
+$$ E_{\text{bonded}} = E_{\text{bond}}(b) + E_{\text{angle}}(\theta) + E_{\text{dihedral}}(\phi) + \ldots . $$
 
-We will focus just on the first two, more information about the higher order processes can be found in relevent textbooks. 
+We will focus just on the first two, more information about the higher order processes can be found in relevent textbooks (see [Home](http://pythoninchemistry.org/sim_and_scat/intro#references)). 
 The bond lengths are typically modelled with a harmonic potential energy function, 
 
-$$ E_{\text{bond}}(\mathbf{r}) = \frac{K_b}{2}(\mathbf{r} - b_0)^2, $$
+$$ E_{\text{bond}}(\mathbf{r}) = \frac{K_b}{2}(b - b_0)^2, $$
 
 where, $b_0$ is the equilibrium bond length and $K_b$ is the force constant for the bond. 
-These must be determined (see [Parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro)), and $\mathbf{r}$ is the distance between the two bonded particles. 
+These must be determined (see [Parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro)), and $b$ is the measured bond length. 
 An example of this function can be seen below, using the parameters of a carbon-carbon bond.
 
 
@@ -38,18 +38,18 @@ An example of this function can be seen below, using the parameters of a carbon-
 import numpy as np
 import matplotlib.pyplot as plt
 
-def bonded(kb, b0, r):
+def bonded(kb, b0, b):
     """
     Calculation of the potential energy of a bond.
     
     Parameters
     ----------
     kb: float
-        Bond force constant (units: eV/Å)
+        Bond force constant (units: eV/Å^2)
     b0: float 
         Equilibrium bond length (units: Å)
-    r: float
-        Distance between two atoms
+    b: float
+        Bond length (units: Å)
     
     Returns
     float
@@ -71,16 +71,19 @@ plt.show()
 
 
 
+Using this harmonic function the bond length is model such that minimum if at the equilibrium bond length and both increasing and decreasing the length will increase the energy equally.
+
 The potential energy of an angle between two atoms that are separated by a third is modeled with a similar harmonic function, 
 
 $$ E_{\text{angle}}(\theta) = \frac{K_\theta}{2}(\theta - \theta_0)^2, $$
 
-where, $\theta$ is the measured angle, $K_\theta$ is the force constant for the harmonic well, and $\theta_0$ is the equilibrium angle size. 
+where, $\theta$ is the measured angle, $K_\theta$ is the force constant for the angle, and $\theta_0$ is the equilibrium angle size. 
 This has the same shape as the bond potential energy curve shown above.
 
 Activate the interactive MyBinder environment (by clicking the "Interact" button at the top). 
 This will allow the code cell below to be run. 
-This simulation shows a single diatomic molecule interacting through a bond, you can vary the temperature of the simulation and observe how the bond vibration changes. 
+This simulation shows a single diatomic molecule interacting through a single bond modelled with a harmonic potential model. 
+The , you can vary the temperature of the simulation and observe how the bond vibration changes. 
 
 
 

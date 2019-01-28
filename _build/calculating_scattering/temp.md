@@ -24,14 +24,15 @@ import numpy as np
 
 def debye(qvalues, xposition, yposition, box_length):
     """
-    Calculates the scattering profile from the simulation 
+    Calculates the scattering profile from the 
+    simulation 
     positions.
     
     Parameters
     ----------
     qvalues: float, array-like
-        The q-vectors over which the scattering should be 
-        calculated
+        The q-vectors over which the scattering 
+        should be calculated
     xposition: float, array-like
         The positions of the particles in the x-axis
     yposition: float, array-like
@@ -61,10 +62,11 @@ def debye(qvalues, xposition, yposition, box_length):
             
 from pylj import md, sample
 
-def md_simulation(number_of_particles, temperature, box_length, 
-                  number_of_steps, sample_frequency):
+def md_simulation(number_of_particles, temperature, 
+                  box_length, number_of_steps, 
+                  sample_frequency):
     """
-    Runs a molecular dynamics simulation in suing the pylj 
+    Runs a molecular dynamics simulation in using the pylj 
     molecular dynamics engine.
     
     Parameters
@@ -72,7 +74,8 @@ def md_simulation(number_of_particles, temperature, box_length,
     number_of_particles: int
         The number of particles in the simulation
     temperature: float
-        The temperature for the initialisation and thermostating
+        The temperature for the initialisation and 
+        thermostating
     box_length: float
         The length of the simulation square
     number_of_steps: int
@@ -101,7 +104,8 @@ def md_simulation(number_of_particles, temperature, box_length,
             min_q = 2. * np.pi / box_length
             qs = np.linspace(min_q, 10e10, 120)[20:]
             inten = debye(qs, system.particles['xposition'], 
-                          system.particles['yposition'], box_length)
+                          system.particles['yposition'], 
+                          box_length)
             sample_system.update(system, qs, inten)
     return system
 

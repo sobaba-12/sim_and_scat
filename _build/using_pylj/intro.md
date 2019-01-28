@@ -90,16 +90,19 @@ This is can be observed with the Python code below for the instanteous temperatu
 import numpy as np
 from pylj import md, sample
 
-def md_simulation(number_of_particles, temperature, box_length, number_of_steps, sample_frequency):
+def md_simulation(number_of_particles, temperature, 
+                  box_length, number_of_steps, sample_frequency):
     """
-    Runs a molecular dynamics simulation in suing the pylj molecular dynamics engine.
+    Runs a molecular dynamics simulation in suing the 
+    pylj molecular dynamics engine.
     
     Parameters
     ----------
     number_of_particles: int
         The number of particles in the simulation
     temperature: float
-        The temperature for the initialisation and thermostating
+        The temperature for the initialisation and 
+        thermostating
     box_length: float
         The length of the simulation square
     number_of_steps: int
@@ -113,8 +116,10 @@ def md_simulation(number_of_particles, temperature, box_length, number_of_steps,
         The complete system information from pylj
     """
     %matplotlib notebook
-    system = md.initialise(number_of_particles, temperature, box_length, 'square')
-    sample_system = sample.CellPlus(system, 'Time/s', 'Temperature/K')
+    system = md.initialise(number_of_particles, 
+                           temperature, box_length, 'square')
+    sample_system = sample.CellPlus(system, 
+                                    'Time/s', 'Temperature/K')
     system.time = 0
     for i in range(0, number_of_steps):
         system.integrate(md.velocity_verlet)
@@ -123,15 +128,18 @@ def md_simulation(number_of_particles, temperature, box_length, number_of_steps,
         system.time += system.timestep_length
         system.step += 1
         if system.step % sample_frequency == 0:
-            sample_system.update(system, np.linspace(0, system.time, system.step), system.temperature_sample)
+            sample_system.update(system, 
+                                 np.linspace(0, system.time, 
+                                             system.step), 
+                                 system.temperature_sample)
     return system
 
 system = md_simulation(20, 300, 20, 5000, 10)
 ```
 
 
-It can be seen that there are two differences to add the custom plot. 
-Firstly, there is the use of the `sample.CellPlus` class, which requires the definition of the labels for the x- and y-axes of the plot. 
+It can be seen that there are two differences when adding the custom plot. 
+Firstly, there is the use of the `sample.CellPlus` class, which requires the definition of the labels for the <i>x</i>- and <i>y</i>-axes of the plot. 
 Secondly, there is the inclusion of the <i>x</i>- and <i>y</i>-data to be plotted in the `sample_system.update` line. 
 In the above example these are `np.linspace(0, system.time, system.step)` (which is an array from 0 to the particular simulation timestep at that moment) and `system.temperature_sample` which is an array of the instaneous temperature at each timestep in the simulation. 
 

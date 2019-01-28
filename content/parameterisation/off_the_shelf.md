@@ -1,9 +1,9 @@
 # Off-the-shelf potentials
 
-In an effort to counter the problem of having to develop a new forcefield *every* time someone wanted to perform a molecular dynamics simulation, a variety of off-the-shelf potentials have been developed.
-These are *general* forcefields that are designed to be applied to any system.
+In an effort to counter the problem of developing a new forcefield *every* time a different MD simulation is to be performed, a variety of off-the-shelf potentials have been developed.
+These aspire to be *general* forcefields to be applied to any system.
 
-Although these potential models has been developed with the aim of *generality*, they should still be used with **caution**.
+Although these potential models are developed with the aim of *generality*, they should still be used with **caution**.
 The chemistry of your system may not directly match the system used in the potential generation, which can lead to systematic errors in your the simulations.
 
 Some examples of off-the-shelf potentials include:
@@ -13,8 +13,8 @@ Some examples of off-the-shelf potentials include:
 - GROMOS: common for biomolecular systems [[4](#References)]
 - OPLS-AA: optimised for liquid simulations [[5](#References)]
 
-These can be applied to many systems, however, as mentioned above, they should be used with caution.
-One way to assess the suitability of an off-the-shelf potential is to use it to reproduce a simple, but well-defined, property of the material, e.g. its density. 
+These can be applied to many systems, however, as mentioned above, they should be used with care.
+One way to assess the suitability of an off-the-shelf potential is to to reproduce a simple, but well-defined, property of the material, e.g. density. 
 
 ## References
 

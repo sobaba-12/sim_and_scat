@@ -26,74 +26,84 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import Boltzmann
 mass_of_argon = 39.948 # amu
-mass_of_argon_kg = mass_of_argon * 1.6605e-27
 
-def lj_force(rij, a, b):
+def lj_force(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the force of the interaction.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond 
+        length (eV)
+    sigma: float 
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Force of the interaction between i and j.
+        Force of the van der Waals interaction (eV/Å)
     """
-    return 12 * a / np.power(rij, 13) - 6 * b / np.power(rij, 7)
+    return 48 * epsilon * np.power(
+        sigma, 12) / np.power(
+        r, 13) - 24 * epsilon * np.power(
+        sigma, 6) / np.power(r, 7)
 
 def init_velocity(T, number_of_particles):
     """
-    Initialise the velocities for a series of particles.
+    Initialise the velocities for a series of 
+    particles.
     
     Parameters
     ----------
     T: float
-        Temperature of the system at initialisation
+        Temperature of the system at 
+        initialisation (K)
     number_of_particles: int
         Number of particles in the system
     
     Returns
     -------
     ndarray of floats
-        Initial velocities for a series of particles
+        Initial velocities for a series of 
+        particles (eVs/Åamu)
     """
     R = np.random.rand(number_of_particles) - 0.5
-    return R * np.sqrt(Boltzmann * T / mass_of_argon_kg)
+    return R * np.sqrt(Boltzmann * T / (
+        mass_of_argon * 1.602e-19))
 
 def get_accelerations(positions):
     """
-    Calculate the acceleration on each particle as a 
-    result of each other particle. 
-    N.B. We use the Python convention of numbering from 0.
+    Calculate the acceleration on each particle
+    as a  result of each other particle. 
+    N.B. We use the Python convention of 
+    numbering from 0.
     
     Parameters
     ----------
     positions: ndarray of floats
-        The positions, in a single dimension, for all
-        of the particles
+        The positions, in a single dimension, 
+        for all of the particles
         
     Returns
     -------
     ndarray of floats
-        The acceleration on each particle
+        The acceleration on each
+        particle (eV/Åamu)
     """
     accel_x = np.zeros((positions.size, positions.size))
     for i in range(0, positions.size - 1):
         for j in range(i + 1, positions.size):
             r_x = positions[j] - positions[i]
             rmag = np.sqrt(r_x * r_x)
-            force_scalar = lj_force(rmag, 1.363e-134, 9.273e-78)
+            force_scalar = lj_force(rmag, 0.0103, 3.4)
             force_x = force_scalar * r_x / rmag
-            accel_x[i, j] = force_x / mass_of_argon_kg
-            accel_x[j, i] = - force_x / mass_of_argon_kg
+            accel_x[i, j] = force_x / mass_of_argon
+            accel_x[j, i] = - force_x / mass_of_argon
     return np.sum(accel_x, axis=0)
 
 def update_pos(x, v, a, dt):
@@ -103,18 +113,22 @@ def update_pos(x, v, a, dt):
     Parameters
     ----------
     x: ndarray of floats
-        The positions of the particles in a single dimension
+        The positions of the particles in a 
+        single dimension
     v: ndarray of floats
-        The velocities of the particles in a single dimension
+        The velocities of the particles in a 
+        single dimension
     a: ndarray of floats
-        The accelerations of the particles in a single dimension
+        The accelerations of the particles in a 
+        single dimension
     dt: float
         The timestep length
     
     Returns
     -------
     ndarray of floats:
-        New positions of the particles in a single dimension
+        New positions of the particles in a single 
+        dimension
     """
     return x + v * dt + 0.5 * a * dt * dt
 
@@ -125,20 +139,24 @@ def update_velo(v, a, a1, dt):
     Parameters
     ----------
     v: ndarray of floats
-        The velocities of the particles in a single dimension
+        The velocities of the particles in a 
+        single dimension (eVs/Åamu)
     a: ndarray of floats
-        The accelerations of the particles in a single dimension 
-        at the previous timestep
+        The accelerations of the particles in a 
+        single dimension at the previous 
+        timestep (eV/Åamu)
     a1: ndarray of floats
-        The accelerations of the particles in a single dimension
-        at the current timestep
+        The accelerations of the particles in a
+        single dimension at the current 
+        timestep (eV/Åamu)
     dt: float
         The timestep length
     
     Returns
     -------
     ndarray of floats:
-        New velocities of the particles in a single dimension
+        New velocities of the particles in a
+        single dimension (eVs/Åamu)
     """
     return v + 0.5 * (a + a1) * dt
 
@@ -149,18 +167,21 @@ def run_md(dt, number_of_steps, initial_temp, x):
     Parameters
     ----------
     dt: float
-        The timestep length
+        The timestep length (s)
     number_of_steps: int
         Number of iterations in the simulation
     initial_temp: float
-        Temperature of the system at initialisation
+        Temperature of the system at 
+        initialisation (K)
     x: ndarray of floats
-        The initial positions of the particles in a single dimension
+        The initial positions of the particles in a 
+        single dimension (Å)
         
     Returns
     -------
     ndarray of floats
-        The positions for all of the particles throughout the simulation
+        The positions for all of the particles 
+        throughout the simulation (Å)
     """
     positions = np.zeros((number_of_steps, 3))
     v = init_velocity(initial_temp, 3)
@@ -173,16 +194,15 @@ def run_md(dt, number_of_steps, initial_temp, x):
         positions[i, :] = x
     return positions
 
-sim_pos = run_md(1e-14, 10000, 300, np.array([1e-10, 5e-10, 1e-9]))
+x = np.array([1, 5, 10])
+sim_pos = run_md(0.1, 10000, 300, x)
     
 %matplotlib inline
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
 for i in range(sim_pos.shape[1]):
-    ax.plot(sim_pos[:, i], '.', label='atom {}'.format(i))
-ax.set_xlabel(r'Step')
-ax.set_ylabel(r'$x$-Position/m')
-ax.legend(frameon=False)
+    plt.plot(sim_pos[:, i], '.', label='atom {}'.format(i))
+plt.xlabel(r'Step')
+plt.ylabel(r'$x$-Position/Å')
+plt.legend(frameon=False)
 plt.show()
 ```
 
@@ -193,6 +213,5 @@ plt.show()
 
 
 
-The particles appear to follow each other through space.
-This can be thought of as the particles all sitting in the potential energy minimum of the Lennard-Jones model.
+The interactions we can see are the particles vibrating within the potential energy well of the Lennard-Jones model.
 It is possible to run the simulation at a series of different initial starting positions by varying values in the array `x`. 

@@ -14,10 +14,9 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 ## Periodic boundary conditions
 
-Even with cut-offs, it is still not possible to simulate a *realistic* system. 
-This would require many more atoms than are possible on current computers.
+Even with cut-offs, it is still not possible to simulate a *realistic* system, as this would require many more atoms than are possible on current computers.
 An example of a very large molecular dynamics simulation is ~3 million atoms [[1](#references)]. 
-However, this is still only 1.8×10<sup>-16</sup> moles, which is **nowhere near** a realistic amount of substance.
+However, this is still only 1.8×10<sup>-16</sup> moles, which is **not close** to a realistic amount of substance.
 
 The use of **periodic boundary conditions** (PBCs) creates an infinite pseudo-crystal of the simulation cell, arranged in a lattice. 
 This allows for more realistic simulations as the system is able to interact through the cell walls with the adjacent cell. 
@@ -40,7 +39,6 @@ The code below modifies the `update_pos` and `get_acceleration` functions define
 import numpy as np
 import matplotlib.pyplot as plt
 mass_of_argon = 39.948 # amu
-mass_of_argon_kg = mass_of_argon * 1.6605e-27
 
 def update_pos(x, v, a, dt, box_length):
     """
@@ -66,29 +64,35 @@ def update_pos(x, v, a, dt, box_length):
         New positions of the particles in a single dimension
     """
     new_pos = x + v * dt + 0.5 * a * dt * dt
+    #print(new_pos)
     new_pos = new_pos % box_length
+    #print(new_pos)
     return new_pos
 
-def lj_force(rij, a, b):
+def lj_force(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the force of the interaction.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond 
+        length (eV)
+    sigma: float 
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Force of the interaction between i and j.
+        Force of the van der Waals interaction (eV/Å)
     """
-    return 12 * a / np.power(rij, 13) - 6 * b / np.power(rij, 7)
+    return 48 * epsilon * np.power(
+        sigma / r, 13) - 24 * epsilon * np.power(
+        sigma / r, 7)
 
 def get_accelerations(positions, box_length, cutoff):
     """
@@ -115,11 +119,12 @@ def get_accelerations(positions, box_length, cutoff):
     for i in range(0, positions.size - 1):
         for j in range(i + 1, positions.size):
             r_x = positions[j] - positions[i]
+            r_x = r_x % box_length
             rmag = np.sqrt(r_x * r_x)
-            force_scalar = lj_force(rmag, 1.363e-134, 9.273e-78)
+            force_scalar = lj_force(rmag, 0.0103, 3.4)
             force_x = force_scalar * r_x / rmag
-            accel_x[i, j] = force_x / mass_of_argon_kg
-            accel_x[j, i] = - force_x / mass_of_argon_kg
+            accel_x[i, j] = force_x / mass_of_argon
+            accel_x[j, i] = - force_x / mass_of_argon
     return np.sum(accel_x, axis=0)
 ```
 
@@ -173,7 +178,7 @@ def init_velocity(T, number_of_particles):
         Initial velocities for a series of particles
     """
     R = np.random.rand(number_of_particles) - 0.5
-    return R * np.sqrt(Boltzmann * T / mass_of_argon_kg)
+    return R * np.sqrt((Boltzmann / 1.602e-19) * T / mass_of_argon)
 
 def run_md(dt, number_of_steps, initial_temp, x, box_length):
     """
@@ -189,8 +194,6 @@ def run_md(dt, number_of_steps, initial_temp, x, box_length):
         Temperature of the system at initialisation
     x: ndarray of floats
         The initial positions of the particles in a single dimension
-    box_length: float 
-        The size of the periodic cell
         
     Returns
     -------
@@ -198,10 +201,11 @@ def run_md(dt, number_of_steps, initial_temp, x, box_length):
         The positions for all of the particles throughout the simulation
     """
     cutoff = box_length / 2.
-    positions = np.zeros((number_of_steps, 3))
-    v = init_velocity(initial_temp, 3)
+    positions = np.zeros((number_of_steps, x.size))
+    v = init_velocity(initial_temp, x.size)
     a = get_accelerations(x, box_length, cutoff)
     for i in range(number_of_steps):
+        #print(i)
         x = update_pos(x, v, a, dt, box_length)
         a1 = get_accelerations(x, box_length, cutoff)
         v = update_velo(v, a, a1, dt)
@@ -209,18 +213,17 @@ def run_md(dt, number_of_steps, initial_temp, x, box_length):
         positions[i, :] = x
     return positions
 
-box_length = 5e-9
-sim_pos = run_md(1e-14, 10000, 300, np.array([1e-10, 2e-9, 14e-9]), box_length)
+box_length = 10
+x = np.array([0, 5, 9])
+sim_pos = run_md(1e-1, 10000, 300, x, box_length)
     
 %matplotlib inline
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
 for i in range(sim_pos.shape[1]):
-    ax.plot(sim_pos[:, i], '.', label='atom {}'.format(i))
-ax.set_ylim(0, box_length)
-ax.set_xlabel(r'Step')
-ax.set_ylabel(r'$x$-Position/m')
-ax.legend(frameon=False)
+    plt.plot(sim_pos[:, i], '.', label='atom {}'.format(i))
+plt.ylim(0, box_length)
+plt.xlabel(r'Step')
+plt.ylabel(r'$x$-Position/Å')
+plt.legend(frameon=False)
 plt.show()
 ```
 

@@ -14,13 +14,14 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 ## The Debye equation
 The Debye equation is an **analytical** formulation to determine the scattering that arises from some system. 
-This equation considers the distances between particles, $r_{mn}$, to determine the scattered intensity at a given $q$-vector, $I(q)$, 
+This equation considers the distances between particles, $r_{ij}$, to determine the scattered intensity at a given $q$-vector, $I(q)$, 
 
-$$ I(q) = \sum_m\sum_nb_mb_n\frac{\sin{(qr_{mn})}}{qr_{mn}}, $$
+$$ I(q) = \sum_i\sum_jb_ib_j\frac{\sin{(qr_{ij})}}{qr_{ij}}, $$
 
-where, $b_m$ and $b_n$ are the scattering lengths of atoms $m$ and $n$ respectively. 
-While this is analytically-precise, there are some **problems** with this method. 
+where, $b_i$ and $b_j$ are the scattering lengths of atoms $i$ and $j$ respectively. 
+While this equation is analytically-precise, there are some **problems** with this method. 
 In particular, that it requires a **pair-wise summation**, which is very slow for large systems such as those obtained in molecular dynamics.
+
 The Python code below is a simple implimentation of the Debye function, where the scattering length is taken as 1 for all particles.
 
 
@@ -31,13 +32,15 @@ import numpy as np
 
 def debye(qvalues, xposition, yposition, box_length):
     """
-    Calculates the scattering profile from the simulation 
+    Calculates the scattering profile from the 
+    simulation 
     positions.
     
     Parameters
     ----------
     qvalues: float, array-like
-        The q-vectors over which the scattering should be calculated
+        The q-vectors over which the scattering 
+        should be calculated
     xposition: float, array-like
         The positions of the particles in the x-axis
     yposition: float, array-like
@@ -59,17 +62,19 @@ def debye(qvalues, xposition, yposition, box_length):
                 ydist = yposition[n] - yposition[m]
                 ydist = ydist % box_length
                 r_mn = np.sqrt(np.square(xdist) + np.square(ydist))
-                intensity[e] += 1 * 1 * np.sin(r_mn * q) / (r_mn * q)
+                intensity[e] += 1 * 1 * np.sin(
+                    r_mn * q) / (r_mn * q)
         if intensity[e] < 0:
             intensity[e] = 0
     return intensity
             
 from pylj import md, sample
 
-def md_simulation(number_of_particles, temperature, box_length, 
-                  number_of_steps, sample_frequency):
+def md_simulation(number_of_particles, temperature, 
+                  box_length, number_of_steps, 
+                  sample_frequency):
     """
-    Runs a molecular dynamics simulation in suing the pylj 
+    Runs a molecular dynamics simulation in using the pylj 
     molecular dynamics engine.
     
     Parameters
@@ -77,7 +82,8 @@ def md_simulation(number_of_particles, temperature, box_length,
     number_of_particles: int
         The number of particles in the simulation
     temperature: float
-        The temperature for the initialisation and thermostating
+        The temperature for the initialisation and 
+        thermostating
     box_length: float
         The length of the simulation square
     number_of_steps: int
@@ -106,7 +112,8 @@ def md_simulation(number_of_particles, temperature, box_length,
             min_q = 2. * np.pi / box_length
             qs = np.linspace(min_q, 10e10, 120)[20:]
             inten = debye(qs, system.particles['xposition'], 
-                          system.particles['yposition'], box_length)
+                          system.particles['yposition'], 
+                          box_length)
             sample_system.update(system, qs, inten)
     return system
 

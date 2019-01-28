@@ -24,33 +24,35 @@ Plotting the Lennard-Jones potential across a very large distance will give some
 import numpy as np
 import matplotlib.pyplot as plt
 
-def lj_force(rij, a, b):
+def lj_force(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the force of the interaction.
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond 
+        length (eV)
+    sigma: float 
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Force of the interaction between i and j.
+        Force of the van der Waals interaction (eV/Å)
     """
-    return 12 * a / np.power(rij, 13) - 6 * b / np.power(rij, 7)
+    return 48 * epsilon * np.power(
+        sigma / r, 13) - 24 * epsilon * np.power(
+        sigma / r, 7)
 
-r = np.linspace(3e-10, 15e-10, 100)
-fig = plt.figure(figsize=(8, 5))
-ax = fig.add_subplot(111)
-ax.plot(r, lj_force(r, 1.363e-134, 9.273e-78))
-ax.set_xlabel(r'$r_{ij}$/m')
-ax.set_ylabel(r'$f$/N')
+r = np.linspace(3.5, 15, 100)
+plt.plot(r, lj_force(r, 0.0103, 3.4))
+plt.xlabel(r'$r$/Å')
+plt.ylabel(r'$f$/eVÅ$^{-1}$')
 plt.show()
 ```
 
@@ -67,13 +69,12 @@ Instead the value is simply taken as 0,
 
 $$       f(r_{ij})=\left\{
   \begin{array}{@{}ll@{}}
-    \dfrac{12A}{r_{ij}^{13}} - \dfrac{6B}{r_{ij}^7}, & \text{if}\ a<15\text{ Å} \\
+    48\varepsilon\Bigg(\dfrac{\sigma^{12}}{r^{13}}\Bigg) - 24\varepsilon\Bigg(\dfrac{\sigma^{6}}{r^{7}}\Bigg), & \text{if}\ a<15\text{ Å} \\
     0, & \text{otherwise.}
   \end{array}\right.
 $$
 
-In addition to saving some computational cost, this provides a **more** realistic simulation. 
-Furthermore, when there are periodic boundaries present (mentioned below), the cut-off ensures that the forces are not sampled incorrectly by having a cut-off of less than half of the cell size.  
+When there are periodic boundaries present (mentioned later), the cut-off ensures that the forces are not sampled incorrectly by having a cut-off of less than half of the cell size.  
 
 This Python code below shows a modification of the Lennard-Jones potential that accounts for this cut-off.
 
@@ -81,9 +82,9 @@ This Python code below shows a modification of the Lennard-Jones potential that 
 
 {:.input_area}
 ```python
-cutoff = 15e-10
+cutoff = 15 
 
-def lj_force_cutoff(rij, a, b):
+def lj_force_cutoff(r, epsilon, sigma):
     """
     Implementation of the Lennard-Jones potential 
     to calculate the force of the interaction which 
@@ -91,20 +92,24 @@ def lj_force_cutoff(rij, a, b):
     
     Parameters
     ----------
-    rij: float
-        Distance between particles i and j
-    a: float 
-        A parameter for interaction between i and j
-    b: float 
-        B parameter for interaction between i and j
+    r: float
+        Distance between two particles (Å)
+    epsilon: float 
+        Potential energy at the equilibrium bond 
+        length (eV)
+    sigma: float 
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Force of the interaction between i and j.
+        Force of the van der Waals interaction (eV/Å)
     """
-    if rij < cutoff:
-        return 12 * a / np.power(rij, 13) - 6 * b / np.power(rij, 7)
+    if r < cutoff:
+        return 48 * epsilon * np.power(
+            sigma / r, 13) - 24 * epsilon * np.power(
+            sigma / r, 7)
     else:
         return 0
 ```

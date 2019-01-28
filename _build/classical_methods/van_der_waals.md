@@ -15,16 +15,18 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 # The van der Waals interaction
 
 Previously, you were given the opportunity to observe particles that interact only through the van der Waals interaction. 
-In order to achieve this it is necessary to have a **potential model**, a mathematical function, that is capable of modeling such an interaction. 
+In order to achieve this it is necessary to have a **potential model**, a mathematical function, that is capable of modeling this interaction. 
 It is known that the van der Waals interaction encompasses **two** forces; the first is the long-range attractive London dispersion and the second is the short-range Pauli exclusion principle.
-Therefore, or potential model must be able to model both of these aspects. 
+Therefore, the potential model must be able to model both of these aspects. 
 
-One mathematical function that is commonly applied is the **Lennard-Jones** potential model [[1](#references)], which considers the attractve London dispersion forces as follows, 
+One mathematical function that is commonly applied to model the van der Waals interaction is the **Lennard-Jones** potential model [[1](#references)].
+This considers the attractve London dispersion forces as follows, 
 
 $$ E_{\text{attractive}}(r) = -4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^6\;,$$ 
 
 where $\sigma$ is the distance at which the potential energy between the two particles is zero, $-\varepsilon$ is the potential energy at the equilbrium separation, and $r$ is the distance between the two atoms. 
-The Pauli exclusion principle is repulsive and only important over very short distances modelled as, 
+The Pauli exclusion principle is repulsive and only substantial over very short distances. 
+It is commonly modelled with the following function, 
 
 $$ E_{\text{repulsive}}(r) = 4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^{12}\;,$$
 
@@ -42,45 +44,49 @@ import matplotlib.pyplot as plt
 
 def attractive_energy(r, epsilon, sigma):
     """
-    Attractive component of the Lennard-Jones interaction
-    energy.
+    Attractive component of the Lennard-Jones 
+    interactionenergy.
     
     Parameters
     ----------
     r: float
         Distance between two particles (Å)
     epsilon: float 
-        Potential energy at the equilibrium bond length (eV)
+        Negative of the potential energy at the 
+        equilibrium bond length (eV)
     sigma: float 
-        Distance at which the potential energy is zero (Å)
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Energy of attractive component of Lennard-Jones 
-        interaction
+        Energy of attractive component of 
+        Lennard-Jones interaction (eV)
     """
     return -4 * epsilon * np.power(sigma / r, 6)
 
 def repulsive_energy(r, epsilon, sigma):
     """
-    Repulsive component of the Lennard-Jones interaction
-    energy.
+    Repulsive component of the Lennard-Jones 
+    interactionenergy.
     
     Parameters
     ----------
     r: float
         Distance between two particles (Å)
     epsilon: float 
-        Potential energy at the equilibrium bond length (eV)
+        Negative of the potential energy at the 
+        equilibrium bond length (eV)
     sigma: float 
-        Distance at which the potential energy is zero (Å)
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Energy of repulsive component of Lennard-Jones 
-        interaction
+        Energy of repulsive component of 
+        Lennard-Jones interaction (eV)
     """
     return 4 * epsilon * np.power(sigma / r, 12)
 
@@ -94,22 +100,29 @@ def lj_energy(r, epsilon, sigma):
     r: float
         Distance between two particles (Å)
     epsilon: float 
-        Potential energy at the equilibrium bond length (eV)
+        Negative of the potential energy at the 
+        equilibrium bond length (eV)
     sigma: float 
-        Distance at which the potential energy is zero (Å)
+        Distance at which the potential energy is 
+        zero (Å)
     
     Returns
     -------
     float
-        Energy of the van der Waals interaction
+        Energy of the Lennard-Jones potential 
+        model (eV)
     """
     return repulsive_energy(
-        r, epsilon, sigma) + attractive_energy(r, epsilon, sigma)
+        r, epsilon, sigma) + attractive_energy(
+        r, epsilon, sigma)
 
 r = np.linspace(3, 5, 100)
-plt.plot(r, attractive_energy(r, 0.0103, 3.4), label='Attractive')
-plt.plot(r, repulsive_energy(r, 0.0103, 3.4), label='Repulsive')
-plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
+plt.plot(r, attractive_energy(r, 0.0103, 3.4),
+         label='Attractive')
+plt.plot(r, repulsive_energy(r, 0.0103, 3.4), 
+         label='Repulsive')
+plt.plot(r, lj_energy(r, 0.0103, 3.4), 
+         label='Lennard-Jones')
 plt.xlabel(r'$r$/Å')
 plt.ylabel(r'$E$/eV')
 plt.legend(frameon=False)
@@ -125,8 +138,8 @@ plt.show()
 
 The Lennard-Jones potential is not the only way to model the van der Waals interaction. 
 Another commonly applied potential model is the **Buckingham** potential [[3](#references)].
-Similar to the Lennard-Jones potential, the Buckingham models the attractive term with a sixth power dependency on the distance between the two bonded particles. 
-However, instead of a twelfth power repulsion term an exponential function is utilised instead. 
+Similar to the Lennard-Jones potential, the Buckingham potential will model the attractive term with a sixth-power dependency on the distance between the two bonded particles. 
+However, instead of a twelfth-power repulsion term an exponential function is utilised. 
 The total Buckingham potential has the following form, 
 
 $$ E_{\text{Buckingham}}(r) = A\exp{(-Br)} - \dfrac{C}{r^6}, $$
@@ -163,9 +176,11 @@ def buckingham_energy(rij, a, b, c):
     return a * np.exp(-b * r) - c / np.power(r, 6)
 
 r = np.linspace(3, 5, 100)
-plt.plot(r, buckingham_energy(r, 10549.313, 3.66, 63.670), 
+plt.plot(r, buckingham_energy(
+    r, 10549.313, 3.66, 63.670), 
          label='Buckingham')
-plt.plot(r, lj_energy(r, 0.0103, 3.4), label='Lennard-Jones')
+plt.plot(r, lj_energy(r, 0.0103, 3.4), 
+         label='Lennard-Jones')
 plt.xlabel(r'$r$/Å')
 plt.ylabel(r'$E$/eV')
 plt.legend(frameon=False)
@@ -183,7 +198,8 @@ There is a small but clear difference between the two potential energy functions
 
 ## Important
 
-These are just two of many potentials for modelling of the van der Waals interaction. Furthermore, the parameters used in the model are just one example of the many possible parameterisations of the argon-argon interaction. 
+These are just two of many potentials that can be used to model the van der Waals interaction.
+Furthermore, the parameters used in the model are just one example of the many possible parameterisations of the argon-argon interaction. 
 
 ## References
 

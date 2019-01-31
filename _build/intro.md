@@ -12,13 +12,13 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 # The interaction between simulation and scattering
 
-**Classical molecular dynamics** (MD) is a common computational chemistry technique for studying complex systems, such as proteins, polymers, and energy materials [[1-4](#references)]. Alongside the interest in these, and other applications, MD is also a used to aid the analysis of data obtained from elastic scattering instruments.
+**Classical molecular dynamics** (MD) is a common computational chemistry technique for studying complex systems, such as proteins, polymers, and energy materials [[1-4](#references)]. Alongside the interest in these, and other applications, MD is also used to aid the analysis of data obtained from elastic scattering instruments.
 
 This tutorial has been written to **introduce users of elastic-scattering techniques**, such as small angle scattering or diffraction, to classical MD simulation. We aim to provide an accessible route for experimentalists to **better understand some of the complexities and subtleties of MD simulation**, thereby aiding these researchers in extracting additional information from their experimental data via simulation.
 
 This tutorial begins with an introduction to classical simulation methods, including a discussion of the development and parameterisation of classical interatomic potential models. We then provide an outline of traditional MD simulation methods and discuss a number of important considerations users of MD simulation should be aware of. We close this tutorial with an illustrative practical example, using the open-source Lennard-Jones simulation package [`pylj`](http://pythoninchemistry.org/pylj) [[5,6](#references)], and discuss how a radially averaged scattering profile may be obtained **directly from simulation** via the Debye equation [[7](#references)].
 
-We wish to emphasise that this tutorial is in **no way** a complete course on classical simulation or MD, and would direct the interested reader to one of the many detailed textbooks on this subject [[8-12](#references)]. Rather, it is our hope that this tutorial provides a simple, practical, and **general introduction to new, or future, users of MD methods within the scattering community**.
+We wish to emphasise that this tutorial is in **no way** a complete course on classical simulation or MD, and would direct the interested reader to one of the many detailed textbooks on this subject [[8-12](#references)]. Rather, it is our hope that this tutorial provides a simple, practical, and a **general introduction to new, or future, users of MD methods within the scattering community**.
 
 ## Prerequisites
 
@@ -44,22 +44,22 @@ If you would prefer to run the resource locally, details of how this can be achi
 
 ## Code (in)efficiency
 
-Please be aware that the Python code in this tutorial has been written to prioritise understanding, above computational efficiency. 
-Individual examples may therefore not be be the most efficient implementation of particular algorithms. 
+Please be aware that the Python code in this tutorial has been written to prioritise understanding, above computational efficiency.
+Individual examples may therefore not be the most efficient implementation of particular algorithms.
 However, we have endeavoured to provide code examples that are *authentic*, and accurately represent the relevant aspects of *real* molecular dynamics methods.
 
 ## Sharing this resource
 
 This is an open educational resource, shared under a [CC BY-SA 4.0 license](./LICENSE.md).
 This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
-Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
-Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
+Basically, you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
+Please use the reference below, or download it as a [BibTeX file](./sim_and_scat.bib).
 > McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
 
 ## Authors
 
-This open educational resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) during his PhD at the University of Bath and Diamond Light Source.
-The resource benefitted substantially from the hard-work and input of the following people:
+This open educational resource was originally developed by [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911) during his Ph.D. at the University of Bath and Diamond Light Source.
+The resource benefitted substantially from the hard work and input of the following people:
 - [James Grant](https://orcid.org/0000-0003-1362-2055)
 - [Adam R. Symington](https://orcid.org/0000-0001-6059-497X)
 - [Tim Snow](https://orcid.org/0000-0001-7146-6885)

@@ -20,11 +20,11 @@ It is known that the van der Waals interaction encompasses **two** forces; the f
 Therefore, the potential model must be able to model both of these aspects. 
 
 One mathematical function that is commonly applied to model the van der Waals interaction is the **Lennard-Jones** potential model [[1](#references)].
-This considers the attractve London dispersion forces as follows, 
+This considers the attractive London dispersion forces as follows, 
 
 $$ E_{\text{attractive}}(r) = -4\varepsilon\Big(\dfrac{\sigma}{r}\Big)^6\;,$$ 
 
-where $\sigma$ is the distance at which the potential energy between the two particles is zero, $-\varepsilon$ is the potential energy at the equilbrium separation, and $r$ is the distance between the two atoms. 
+where $\sigma$ is the distance at which the potential energy between the two particles is zero, $-\varepsilon$ is the potential energy at the equilibrium separation, and $r$ is the distance between the two atoms. 
 The Pauli exclusion principle is repulsive and only substantial over very short distances. 
 It is commonly modelled with the following function, 
 
@@ -194,7 +194,7 @@ plt.show()
 
 
 
-There is a small but clear difference between the two potential energy functions; this is be due to the different potential model and the [parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro) of that model.
+There is a small but clear difference between the two potential energy functions; this is due to the different potential model and the [parameterisation](http://pythoninchemistry.org/sim_and_scat/parameterisation/intro) of that model.
 
 ## Important
 

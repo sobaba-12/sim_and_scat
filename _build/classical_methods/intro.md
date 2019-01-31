@@ -18,12 +18,12 @@ The Born-Oppenheimer approximation separated the motions of the nuclei and the e
 This gives theoretical chemists two options for how to model a chemical system, and determine the potential energy: 
 - Treat the nuclei as stationary and model the motions and interactions of the electrons using the Schrödinger equation
 - To integrate the motions of the electrons into the nuclei and model these particles as point charges
-Knowledge of the potential energy of a given atomic configuration means that is ti possible to compare different configurations and determine the most probable. 
+Knowledge of the potential energy of a given atomic configuration means that is it possible to compare different configurations and determine the most probable. 
 
 The former is the basis for quantum mechanical calculations, such as density functional theory (DFT) methods. 
 In these methods, the aim is to find an iterative solution to the Schrödinger equation. 
-However, these methods are **very** computationally expensive, and are therefore realistically limited to hundreds or thousands of atoms [[1](#References)]. 
-We will not discuss the details of quantum mechanical methods more than this, for more information there are many great textbooks on the subject [[2,3](#References)]. 
+However, these methods are **very** computationally expensive and are therefore realistically limited to hundreds or thousands of atoms [[1](#References)]. 
+We will not discuss the details of quantum mechanical methods more than this, for more information, there are many great textbooks on the subject [[2,3](#References)]. 
 
 The latter uses methods that are known as **classical methods**.
 Classical methods involve the use of a potential model (sometimes called a force-field) to simulate chemical systems. 

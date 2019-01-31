@@ -4,7 +4,7 @@
 
 The is the repository for the open educational resource (OER) entitled "The interaction between simulation and scattering".
 This resource is designed to introduce users of scattering and diffraction techniques to the methods of classical simulation and molecular dynamics.
-The resource is currently hosted at [pythoninchemistry.org/sim_and_scat](http://pythoninchemistry.org/sim_vs_trad/intro.html).
+The resource is currently hosted at [pythoninchemistry.org/sim_and_scat](https://pythoninchemistry.org/sim_and_scat).
 
 ## Sharing this resource
 

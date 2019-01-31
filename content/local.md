@@ -12,3 +12,6 @@ pip install sim-and-scat
 
 This will download and install the necessary packages for the resource.
 Now that the computer is ready to run the course it can all be found, in order, in the `run_local` directory.
+
+Please be aware that if you are running the resource locally, when the text references the "Interact" button at the top of the page, this may be ignored. 
+This button is only present in the web interface to allow web users to launch a MyBinder Jupyter Notebook.

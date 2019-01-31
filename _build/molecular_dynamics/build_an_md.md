@@ -213,5 +213,5 @@ plt.show()
 
 
 
-The interactions we can see are the particles vibrating within the potential energy well of the Lennard-Jones model.
+We can see how the particles interact with each other separated by about the minimum of the LJ and moving in tandem through the system.
 It is possible to run the simulation at a series of different initial starting positions by varying values in the array `x`. 

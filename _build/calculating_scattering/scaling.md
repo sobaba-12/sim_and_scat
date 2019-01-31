@@ -14,7 +14,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 ## Scaling
 
-The downfall of the Debye method is that it scales $\mathcal{O}(N^2)$, where $N$ is the number of particles, meaning that as the number of particles in the calculation increases, the time taken for the calculation **increases exponentially**. 
+The downfall of the Debye method is that it scales $\mathcal{O}(N^2)$, where $N$ is the number of particles, meaning that as the number of particles in the calculation increases, the time taken for the calculation **increases with a power law**. 
 
 The inefficiency of the Debye equation has lead to a series of approximations that lead to **improved efficiency**, while keeping a high level of accuracy. 
 Examples of these include the Fibonacci sequence method from Svergun, and the Golden Vectors method of Watson and Curtis [1-3].

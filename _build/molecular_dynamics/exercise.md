@@ -15,7 +15,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ## Kaboom!!
 
 Try changing the initial particle positions to `[1e-10, 2e-10, 1e-9]`. 
-The system will probably explode *explode*, consider why this has happened.
+The system will probably *explode*, consider why this has happened.
 
 
 

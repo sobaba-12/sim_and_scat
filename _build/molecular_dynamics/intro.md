@@ -24,13 +24,13 @@ For this the starting point is **Newton's second law of motion**,
 $$ \mathbf{f} = m\mathbf{a}, $$
 
 where $\mathbf{f}$ is the force vector on an atom of mass, $m$, with an acceleration vector, $\mathbf{a}$. 
-The force, $f$, between two particles, at a distance $r$, can be found from the interaction energy, $E(r)$, 
+The force, $f$, between two particles, at a position $r$, can be found from the interaction energy, $E(r)$, 
 
 $$ f = \dfrac{-\partial E(r)}{\partial r}.$$
 
-Which is to say that the force is the negative of the first derivative of the energy with respect to the distance between them.
+Which is to say that the force is the negative of the first derivative of the energy with respect to the postion of the particles.
 The Python code below creates a new function that is capable of calculating the force from the Lennard-Jones potential. 
-The force between the atoms is then plotted.
+The force on the atoms is then plotted.
 
 
 
@@ -159,10 +159,10 @@ where, $\Delta t$ is the timestep (how far in time is incremented), $\mathbf{x}_
 This pair of equations is known as the Velocity-Verlet algorithm, which can be written as:
 
 1. Calculate the force (and therefore acceleration) on the particle
-2. Determine a new velocity for the particle, based on the average acceleration at the current and new positions
-3. Overwrite the old acceleration values with the new ones, $\mathbf{a}_i(t) = \mathbf{a}_i(t+\Delta t)$
-4. Find the position of the particle after some timestep
-5. Go to 1
+2. Find the position of the particle after some timestep
+3. Calculate the new forces and accelerations4. Determine a new velocity for the particle, based on the average acceleration at the current and new positions
+5. Overwrite the old acceleration values with the new ones, $\mathbf{a}_i(t) = \mathbf{a}_i(t+\Delta t)$
+6. Repeat
 
 After the initial relaxation of the particles to equilibrium, this process can be continued for as long as is required to get **good statistics** for the quantity you are intereseting in. 
 
@@ -242,7 +242,7 @@ There are only **two components** left that we need to run a molecular dynamics 
 The particle positions are usually either taken from some library of structures (e.g. the [protein data bank](http://www.rcsb.org) if you are simulating proteins) or based on some knowledge of the system (e.g. CaF<sub>2</sub> is well known to have a face-centred cubic structure). 
 For complex, multicomponent systems, software such as Packmol [[1](#References)] may be used to build up the structure from its constituent parts.
 The importance of this initial structure **cannot be overstated**.
-For example if the initial structure is uinrepresentative of the equilibrium structure, it may take a very long time before the equilibrium structure is obtained, possibly much longer than can be reasonably simulated. 
+For example if the initial structure is unrepresentative of the equilibrium structure, it may take a very long time before the equilibrium structure is obtained, possibly much longer than can be reasonably simulated. 
 
 The particle velocities are more general, as the total kinetic energy, $E_K$ of the system (and therefore the particle velocities) are dependent on the temperature of the simulation, $T$. 
 

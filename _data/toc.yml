@@ -32,6 +32,9 @@
   - title: Bonds
     url: /classical_methods/bonds
     not_numbered: true
+  - title: Potential models
+    url: /classical_methods/potential_models
+    not_numbered: true
 
 - title: Parameterisation
   url: /parameterisation/intro

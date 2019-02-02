@@ -62,10 +62,9 @@ plt.show()
 
 
 
-{:.output .output_data_text}
-```
-<Figure size 640x480 with 1 Axes>
-```
+{:.output .output_png}
+![png](../images/classical_methods/coulomb_1_0.png)
+
 
 
 The above code and plot can be thought of as the interaction between a sodium ion (Na<sup>+</sup>) and a chloride ion (Cl<sup>-</sup>).

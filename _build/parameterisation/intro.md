@@ -2,8 +2,8 @@
 interact_link: content/parameterisation/intro.ipynb
 title: 'Parameterisation'
 prev_page:
-  url: /classical_methods/bonds
-  title: 'Bonds'
+  url: /classical_methods/potential_models
+  title: 'Potential models'
 next_page:
   url: /parameterisation/off_the_shelf
   title: 'Off-the-shelf potentials'
@@ -34,7 +34,7 @@ However, for our current purposes we only need to remember that quantum calculat
 We will stick with the example of a Lennard-Jones interaction, however the arguments and methods discussed are **extensible to all different interaction types**. 
 To generate the potential energy model between two particles of argon, we could conduct quantum mechanical calculations at a range of inter-atom separations, from 2 to 5 Å, finding the energy between the two particles at each separation.
 
-The Python code below plots the energy against distance that may be obtained from a quantum mechanical calculation. 
+The Python code below plots the energy against distance that has been obtained from a quantum mechanical calculation. 
 
 
 

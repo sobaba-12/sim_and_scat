@@ -42,6 +42,8 @@ When the Thebelab integration fails, please use the Interact button.
 
 If you would prefer to run the resource locally, details of how this can be achieved can be found [here](https://github.com/pythoninchemistry/sim_and_scat/blob/master/content/local.md).
 
+If you use the "Interact" button, in order to run a particular code block, select the cdoe button and click the "Run" button at the top of the page. 
+
 ## Code (in)efficiency
 
 Please be aware that the Python code in this tutorial has been written to prioritise understanding, above computational efficiency.

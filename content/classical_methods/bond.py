@@ -49,7 +49,7 @@ def simulation(temperature):
     """
     # Initialise the system
     system = md.initialise(2, temperature, 10, 'square',
-                           constants=[440.5, 1.522e-10)], forcefield=bond)
+                           constants=[440.5, 1.522e-10], forcefield=bond)
     system.cut_off = 30
     system.particles['xposition'] = [5e-10, 6e-10]
     system.particles['yposition'] = [5e-10, 6e-10]

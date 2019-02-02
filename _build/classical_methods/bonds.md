@@ -7,8 +7,8 @@ prev_page:
   url: /classical_methods/coulomb
   title: 'Charged interactions'
 next_page:
-  url: /parameterisation/intro
-  title: 'Parameterisation'
+  url: /classical_methods/potential_models
+  title: 'Potential models'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -71,7 +71,7 @@ plt.show()
 
 
 
-Using this harmonic function the bond length is model such that minimum if at the equilibrium bond length and both increasing and decreasing the length will increase the energy equally.
+Using this harmonic function the bond length is modelled such that minimum if at the equilibrium bond length and both increasing and decreasing the length will increase the energy equally.
 
 The potential energy of an angle between two atoms that are separated by a third is modeled with a similar harmonic function, 
 
@@ -83,7 +83,7 @@ This has the same shape as the bond potential energy curve shown above.
 Activate the interactive MyBinder environment (by clicking the "Interact" button at the top). 
 This will allow the code cell below to be run. 
 This simulation shows a single diatomic molecule interacting through a single bond modelled with a harmonic potential model. 
-The , you can vary the temperature of the simulation and observe how the bond vibration changes. 
+Again, you can vary the temperature of the simulation and observe how the bond vibration changes. 
 
 
 
@@ -91,7 +91,7 @@ The , you can vary the temperature of the simulation and observe how the bond vi
 ```python
 import bond
 %matplotlib notebook
-bond.simulation(300)
+bond.simulation(100)
 ```
 
 

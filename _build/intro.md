@@ -40,9 +40,12 @@ The "Thebelab" button will make the code blocks in the webpage interactive, such
 The Thebelab integration is still in *beta* and therefore will not work perfectly every time (it is known not to work for the pylj examples).
 When the Thebelab integration fails, please use the Interact button.
 
-If you would prefer to run the resource locally, details of how this can be achieved can be found [here](https://github.com/pythoninchemistry/sim_and_scat/blob/master/content/local.md).
 
-If you use the "Interact" button, in order to run a particular code block, select the cdoe button and click the "Run" button at the top of the page. 
+If you use the "Interact" button, please be aware that we are since we are running on a free MyBinder resource, the launching of the Jupyter Notebook may be slow.
+We are investigating resources to run our own BinderHub in the future.
+Within the Jupyter Notebook in order to run a particular code block, select the cdoe button and click the "Run" button at the top of the page. 
+
+If you would prefer to run the resource locally, details of how this can be achieved can be found [here](https://github.com/pythoninchemistry/sim_and_scat/blob/master/content/local.md).
 
 ## Code (in)efficiency
 

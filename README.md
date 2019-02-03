@@ -8,16 +8,16 @@ The resource is currently hosted at [pythoninchemistry.org/sim_and_scat](https:/
 
 ## Sharing this resource
 
-This OER is shared under a [CC BY-SA 4.0 license](./LICENSE.md).
-This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
+The material within this OER is shared under a [CC BY 4.0 license](./content/LICENSE.md), while the jupyter-book software that is used to build the resource is shared under an [MIT license](./LICENSE.md)
+This means that anyone is free to copy and redistribute the material within the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
 Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
 Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
 > McCluskey, A. R. [10.5281/zenodo.2543277](http://doi.org/10.5281/zenodo.2543277)
 
 ## Contributing to this resource
 
-We welcome all contributions. 
-The content of the webpages can be changed by editing the notebooks and markdown files the `content` directory. 
+We welcome all contributions.
+The content of the webpages can be changed by editing the notebooks and markdown files the `content` directory.
 The ordering of the content is controlled by `data/toc.yml`.
 Pleaase feel free to make a pull request with your changes and we will try and review them ASAP.
 

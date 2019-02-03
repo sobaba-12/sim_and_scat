@@ -31,7 +31,7 @@ When the Thebelab integration fails, please use the Interact button.
 
 If you use the "Interact" button, please be aware that we are since we are running on a free MyBinder resource, the launching of the Jupyter Notebook may be slow.
 We are investigating resources to run our own BinderHub in the future.
-Within the Jupyter Notebook in order to run a particular code block, select the cdoe button and click the "Run" button at the top of the page. 
+Within the Jupyter Notebook in order to run a particular code block, select the cdoe button and click the "Run" button at the top of the page.
 
 If you would prefer to run the resource locally, details of how this can be achieved can be found [here](https://github.com/pythoninchemistry/sim_and_scat/blob/master/content/local.md).
 
@@ -43,7 +43,7 @@ However, we have endeavoured to provide code examples that are *authentic*, and 
 
 ## Sharing this resource
 
-This is an open educational resource, shared under a [CC BY-SA 4.0 license](./LICENSE.md).
+This is an open educational resource, shared under a [CC BY 4.0 license](./LICENSE.md).
 This means that anyone is free to copy and redistribute the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
 Basically, you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
 Please use the reference below, or download it as a [BibTeX file](./sim_and_scat.bib).

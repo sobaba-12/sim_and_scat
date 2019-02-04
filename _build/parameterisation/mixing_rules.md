@@ -23,7 +23,7 @@ These are as follows,
 
 $$ \sigma_{ij} = \dfrac{\sigma_{ii} + \sigma_{jj}}{2} \;\;\;\text{and}\;\;\; \varepsilon_{ij} = \sqrt{\varepsilon_{ii}\varepsilon_{jj}}, $$
 
-where $\sigma$ and $\varepsilon$ are familiar from the Lennard-Jones potential, while the subscript differentiate self- and mixed-interactions.
+where $\sigma$ and $\varepsilon$ are familiar from the Lennard-Jones potential, while the subscripts differentiate self- and mixed-interactions.
 
 As with the determination of the potentials itself, the ways in which these potentials can be mixed can vary considerably and there is no single rule for all systems.
 To give further insight into the variation possible, the Wikipedia entry on [combining rules](https://en.wikipedia.org/wiki/Combining_rules) provides an introduction into some of the rule sets commonly employed.

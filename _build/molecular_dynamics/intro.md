@@ -160,11 +160,12 @@ This pair of equations is known as the Velocity-Verlet algorithm, which can be w
 
 1. Calculate the force (and therefore acceleration) on the particle
 2. Find the position of the particle after some timestep
-3. Calculate the new forces and accelerations4. Determine a new velocity for the particle, based on the average acceleration at the current and new positions
+3. Calculate the new forces and accelerations
+4. Determine a new velocity for the particle, based on the average acceleration at the current and new positions
 5. Overwrite the old acceleration values with the new ones, $\mathbf{a}_i(t) = \mathbf{a}_i(t+\Delta t)$
 6. Repeat
 
-After the initial relaxation of the particles to equilibrium, this process can be continued for as long as is required to get **good statistics** for the quantity you are intereseting in. 
+After the initial relaxation of the particles to equilibrium, this process can be continued for as long as is required to get sufficient statistics for the quantity you are intereseting in. 
 
 The Python code below is a set of two function for the above equations, these will be applied later.
 
@@ -228,7 +229,7 @@ def update_velo(v, a, a1, dt):
 ```
 
 
-The above process is called the intergration step, and Velocity-Verlet is the **integrator**. 
+The above process is called the intergration step, and the Velocity-Verlet algorithm is the **integrator**. 
 This function is highly non-linear for more than two particles. 
 The result is that the integration step will only be valid for very small values of $\Delta t$, e.g. if a large timestep is used the acceleration calculated will not be accurate as the forces on the atom will change too significantly during it. 
 The value for the timestep is usually on the order of 10<sup>-15</sup> s (femtoseconds). 

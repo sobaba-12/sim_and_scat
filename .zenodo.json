@@ -41,7 +41,7 @@
 		}
 	],
 	"description": "The interaction between simulation and scattering",
-	"access_rights": "open",
+	"access_right": "open",
 	"license": "CC-BY-4.0",
 	"grants": [{
 			"funder": "University of Bath & Diamond Light Source",

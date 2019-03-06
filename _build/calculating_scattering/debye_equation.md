@@ -4,8 +4,8 @@ redirect_from:
 interact_link: content/calculating_scattering/debye_equation.ipynb
 title: 'The Debye equation'
 prev_page:
-  url: /calculating_scattering/intro
-  title: 'Calculating scattering'
+  url: /calculating_scattering/rdfs
+  title: 'Radial Distribution Functions'
 next_page:
   url: /calculating_scattering/temp
   title: 'Temperature'
@@ -13,16 +13,19 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ---
 
 ## The Debye equation
+
 The Debye equation is an **analytical** formulation to determine the scattering that arises from some system. 
+In many ways, the Debye equation can be thought of as a weighted, analytical Fourier transform of the radial distribution function. 
+It is weighted by the scattering length of the particular particles being considered, $b_i$ and $b_j$.
 This equation considers the distances between particles, $r_{ij}$, to determine the scattered intensity at a given $q$-vector, $I(q)$, 
 
-$$ I(q) = \sum_i\sum_jb_ib_j\frac{\sin{(qr_{ij})}}{qr_{ij}}, $$
+$$ I(q) = \sum_i\sum_jb_ib_j\frac{\sin{(qr_{ij})}}{qr_{ij}}. $$
 
-where, $b_i$ and $b_j$ are the scattering lengths of atoms $i$ and $j$ respectively. 
 While this equation is analytically-precise, there are some **problems** with this method. 
 In particular, that it requires a **pair-wise summation**, which is very slow for large systems such as those obtained in molecular dynamics.
 
-The Python code below is a simple implimentation of the Debye function, where the scattering length is taken as 1 for all particles.
+The Python code below is a simple implimentation of the Debye function, where the scattering length is taken as 1.909 fm (the $b$ for argon) for all particles.
+Try different values for the scattering length, and observe how the resulting profile changes. 
 
 
 
@@ -30,7 +33,7 @@ The Python code below is a simple implimentation of the Debye function, where th
 ```python
 import numpy as np
 
-def debye(qvalues, xposition, yposition, box_length):
+def debye(qvalues, xposition, yposition, box_length, b):
     """
     Calculates the scattering profile from the 
     simulation 
@@ -62,7 +65,7 @@ def debye(qvalues, xposition, yposition, box_length):
                 ydist = yposition[n] - yposition[m]
                 ydist = ydist % box_length
                 r_mn = np.sqrt(np.square(xdist) + np.square(ydist))
-                intensity[e] += 1 * 1 * np.sin(
+                intensity[e] += b * b * np.sin(
                     r_mn * q) / (r_mn * q)
         if intensity[e] < 0:
             intensity[e] = 0
@@ -100,7 +103,7 @@ def md_simulation(number_of_particles, temperature,
     system = md.initialise(number_of_particles, temperature, 
                            box_length, 'square')
     sample_system = sample.CellPlus(system, 
-                                    'q/m$^{-1}$', 'I(q)')
+                                    'q/m$^{-1}$', 'I(q) / m$^2$')
     system.time = 0
     for i in range(0, number_of_steps):
         system.integrate(md.velocity_verlet)
@@ -113,7 +116,7 @@ def md_simulation(number_of_particles, temperature,
             qs = np.linspace(min_q, 10e10, 120)[20:]
             inten = debye(qs, system.particles['xposition'], 
                           system.particles['yposition'], 
-                          box_length)
+                          box_length, 1.909e-15)
             sample_system.update(system, qs, inten)
     return system
 

@@ -105,3 +105,6 @@
   - title: Visualise the simulation
     url: /practicalities/visualise
     not_numbered: true
+  - title: Calculating distances
+    url: /practicalities/calculating_distances
+    not_numbered: true

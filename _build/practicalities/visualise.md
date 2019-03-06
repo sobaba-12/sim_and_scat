@@ -5,15 +5,15 @@ prev_page:
   url: /practicalities/intro
   title: 'Practicalities'
 next_page:
-  url: 
-  title: ''
+  url: /practicalities/calculating_distances
+  title: 'Calculating distances'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
 ## Visualise the structure
 
 First of all it would be nice to see the structure of the molecule that we have simulated. 
-Using the Python code below, it is possible to load and present the simulation trajectory. 
+Using the Python code below, it is possible to load and present the simulation trajectory (this visualisation will only work if you use the Interact button above, or run this locally). 
 This can also be achieved offline by using software such as [VMD](https://www.ks.uiuc.edu/Research/vmd/).
 
 

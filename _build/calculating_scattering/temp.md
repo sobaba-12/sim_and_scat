@@ -15,6 +15,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 ## Temperature effects
 
 Try varying the temperature of the simulation, through values of 3, 30, and 300 K, and watch the scattering profile for the presence of Bragg peaks in the data when the system is cold enough to freeze.
+Compare this to the radial distribution functions discussed previously.
 
 
 

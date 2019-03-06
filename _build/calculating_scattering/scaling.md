@@ -7,8 +7,8 @@ prev_page:
   url: /calculating_scattering/temp
   title: 'Temperature'
 next_page:
-  url: 
-  title: ''
+  url: /practicalities/intro
+  title: 'Practicalities'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

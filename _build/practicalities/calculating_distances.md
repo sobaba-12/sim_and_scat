@@ -7,8 +7,8 @@ prev_page:
   url: /practicalities/visualise
   title: 'Visualise the simulation'
 next_page:
-  url: 
-  title: ''
+  url: /practicalities/real_simulation
+  title: 'Calculating real scattering'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -43,20 +43,15 @@ for ts in u.trajectory:
 {:.output .output_stream}
 ```
 < Timestep 0 with unit cell dimensions [69.594 69.594 69.594 90.    90.    90.   ] >
-< Timestep 1 with unit cell dimensions [69.692 69.692 69.692 90.    90.    90.   ] >
-< Timestep 2 with unit cell dimensions [69.619 69.619 69.619 90.    90.    90.   ] >
-< Timestep 3 with unit cell dimensions [69.703 69.703 69.703 90.    90.    90.   ] >
-< Timestep 4 with unit cell dimensions [69.652 69.652 69.652 90.    90.    90.   ] >
-< Timestep 5 with unit cell dimensions [69.648 69.648 69.648 90.    90.    90.   ] >
-< Timestep 6 with unit cell dimensions [69.621 69.621 69.621 90.    90.    90.   ] >
-< Timestep 7 with unit cell dimensions [69.648 69.648 69.648 90.    90.    90.   ] >
-< Timestep 8 with unit cell dimensions [69.735 69.735 69.735 90.    90.    90.   ] >
-< Timestep 9 with unit cell dimensions [69.641 69.641 69.641 90.    90.    90.   ] >
-< Timestep 10 with unit cell dimensions [69.58 69.58 69.58 90.   90.   90.  ] >
+< Timestep 1 with unit cell dimensions [69.619 69.619 69.619 90.    90.    90.   ] >
+< Timestep 2 with unit cell dimensions [69.652 69.652 69.652 90.    90.    90.   ] >
+< Timestep 3 with unit cell dimensions [69.621 69.621 69.621 90.    90.    90.   ] >
+< Timestep 4 with unit cell dimensions [69.735 69.735 69.735 90.    90.    90.   ] >
+< Timestep 5 with unit cell dimensions [69.58 69.58 69.58 90.   90.   90.  ] >
 
 ```
 
-As we can see, this trajectory has 11 timesteps. 
+As we can see, this trajectory has 6 timesteps. 
 Now let us find the distances between each atom in the first of these timesteps, and plot them as a histogram.
 Note, if you run this for yourself it is really quite slow (hinting to the rational for the development of the more efficient methods metioned earlier). 
 

@@ -108,3 +108,6 @@
   - title: Calculating distances
     url: /practicalities/calculating_distances
     not_numbered: true
+  - title: Calculating real scattering
+    url: /practicalities/real_simulation
+    not_numbered: true

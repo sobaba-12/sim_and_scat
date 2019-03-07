@@ -16,4 +16,5 @@ dependencies:
     - numpy==1.15.4
     - matplotlib==3.0.2
     - pylj==1.2.5
+    - periodictable==1.5.0
 prefix: /Users/andrew/miniconda3/envs/sim_and_scat

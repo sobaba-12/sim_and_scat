@@ -48,6 +48,7 @@ plt.show()
 
 This means there is now around 130 q values for which we need to calculate the Debye equation. 
 To increase the efficiency of this, we will only calculate the distance between all of the atoms once.
+At the same time we can use the `periodictable` package to get the X-ray scattering length for each element. 
 
 
 
@@ -78,7 +79,7 @@ for ts in u.trajectory:
 ```
 
 
-We now have three lists, that contain the information of the distances between the atoms, and the elements associated with each distance. 
+We now have three lists, that contain the information of the distances between the atoms, and the elemental scatteringh lengths associated with each distance. 
 This means that we can use the code below to implement the Debye equation (note that in order to save some computational expense the Debye equation is slightly optimised using the `numpy` library). 
 
 
@@ -92,6 +93,8 @@ for k in range(len(distances)):
             np.array(distances[k]) * q_value) / (np.array(distances[k]) * q_value))
 ```
 
+
+We can then use a basic fitting to scale the scattering to give the best possible agreement between the experimental data and that from the simulation (at this point a uniform background could also be included). 
 
 
 
@@ -115,7 +118,7 @@ plt.show()
 
 
 {:.output .output_png}
-![png](../images/practicalities/real_simulation_6_0.png)
+![png](../images/practicalities/real_simulation_7_0.png)
 
 
 

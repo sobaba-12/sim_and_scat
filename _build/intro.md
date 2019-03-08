@@ -20,8 +20,8 @@ Therefore this open learning module aims ot provide an accessible route for user
 We hope that this will increase those confident to use classical simulation to understand their experimental data, while improving the quality of analysis.
 <center>
     <br>
-    <img src="images/waxsis.png" width="500px"><br>
-    <i>Figure 1. (A) SWAXS curves for a number of proteins compared with experimental data, (B) Apoferritin, (C) glucose isomerase, (D) lysozyme, (E) ubiquitin.</i>
+    <a href="https://doi.org/10.1093/nar/gkv309"><img src="images/waxsis.png" width="500px"></a><br>
+    <i>Figure 1. (A) SWAXS curves for a number of proteins compared with experimental data, (B) Apoferritin, (C) glucose isomerase, (D) lysozyme, (E) ubiquitin, from Knight and Hub [[13](#references)]</i>
     <br><br>
 </center>
 

@@ -10,7 +10,7 @@ We hope that this will increase those confident to use classical simulation to u
     <br>
     <img src="images/waxsis.png" width="300px"><br>
     <i>Figure 1. (A) SWAXS curves for a number of proteins compared with experimental data, (B) Apoferritin, (C) glucose isomerase, (D) lysozyme, (E) ubiquitin.</i>
-    <br>
+    <br><br>
 </center>
 
 This tutorial begins with an introduction to classical simulation methods, including a discussion of the development and parameterisation of classical interatomic potential models. We then provide an outline of traditional MD simulation methods and discuss a number of important considerations users of MD simulation should be aware of. We close this tutorial with an illustrative practical example, using the open-source Lennard-Jones simulation package [`pylj`](http://pythoninchemistry.org/pylj) [[14,15](#references)], and discuss how a radially averaged scattering profile may be obtained **directly from simulation** via the Debye equation [[16](#references)].

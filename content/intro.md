@@ -3,9 +3,9 @@
 **Classical molecular dynamics** (MD) is a common computational chemistry technique for studying complex systems, such as proteins, polymers, and energy materials [[1-4](#references)].
 More and more molecular dynamics simulation is being used to aid in the analysis of experimental data from **elastic-scattering techniques**, such as small angle scattering or diffraction [[5-12](#references)].
 For example, the figure below is from the work of Knight and Hub [[13](#references)], showing the agreement between experimental data and that determined from simulation for a series of biomolecules.
-However, few users of these scattering technique have formal training in classical simulation, which often leads to their use with a full understanding of some of the complexities and subtleties.
+However, few users of these scattering technique have formal training in classical simulation, which often leads to their use without a full understanding of some of the complexities and subtleties.
 Therefore this open learning module aims ot provide an accessible route for users of scattering techniques to understand the methodology of molecular dynamics simulation, some of the pitfalls, and understand how scattering data may be obtained from simulation.
-We hope that this will increase those confident to use classical simulation to understand their experimental data, while improving the quality of analysis.
+We hope that this will increase the number of those confident to use classical simulation to understand their experimental data, while improving the quality of analysis.
 <center>
     <br>
     <a href="https://doi.org/10.1093/nar/gkv309"><img src="images/waxsis.png" width="500px"></a><br>

@@ -1,1 +1,1 @@
-content/practicalities/intro.md
+../content/practicalities/intro.md

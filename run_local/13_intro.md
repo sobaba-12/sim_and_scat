@@ -1,1 +1,1 @@
-content/important_considerations/intro.md
+../content/important_considerations/intro.md

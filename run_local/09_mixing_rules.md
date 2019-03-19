@@ -1,1 +1,1 @@
-content/parameterisation/mixing_rules.md
+../content/parameterisation/mixing_rules.md

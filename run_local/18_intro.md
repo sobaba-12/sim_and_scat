@@ -1,1 +1,1 @@
-content/calculating_scattering/intro.md
+../content/calculating_scattering/intro.md

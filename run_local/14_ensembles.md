@@ -1,1 +1,1 @@
-content/important_considerations/ensembles.md
+../content/important_considerations/ensembles.md

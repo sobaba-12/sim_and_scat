@@ -1,1 +1,1 @@
-content/parameterisation/off_the_shelf.md
+../content/parameterisation/off_the_shelf.md

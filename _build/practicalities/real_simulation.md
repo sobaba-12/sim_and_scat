@@ -12,7 +12,7 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-## Calculating real scattering
+## Calculating and fitting scattering
 
 Now that we have seen how `MDAnalysis` can be used to read the simulation trajectory. 
 Lets use it to build a Debye equation function.

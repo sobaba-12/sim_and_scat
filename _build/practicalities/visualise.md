@@ -42,12 +42,5 @@ view
 ```
 
 
-
-{:.output .output_data_text}
-```
-NGLWidget(count=6)
-```
-
-
 From this it is clear that there are no water molecules in the visualisation. 
 While there were some in the simulation we have removed them for ease of visualisation, and in our rough comparison with experimental data we will assume complete background substraction.

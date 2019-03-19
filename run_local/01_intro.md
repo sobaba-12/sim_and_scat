@@ -1,1 +1,1 @@
-content/intro.md
+../content/intro.md

@@ -9,7 +9,7 @@ We hope that this will increase the number of those confident to use classical s
 <center>
     <br>
     <a href="https://doi.org/10.1093/nar/gkv309"><img src="images/waxsis.png" width="500px"></a><br>
-    <i>Figure 1. (A) SWAXS curves for a number of proteins compared with experimental data, (B) Apoferritin, (C) glucose isomerase, (D) lysozyme, (E) ubiquitin, from Knight and Hub [[13](#references)]</i>
+    <i>Figure 1. (A) SWAXS curves for a number of proteins compared with experimental data, (B) Apoferritin, (C) glucose isomerase, (D) lysozyme, (E) ubiquitin, from Knight and Hub [<a href='#references'>13</a>]</i>
     <br><br>
 </center>
 

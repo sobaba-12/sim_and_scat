@@ -25,6 +25,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/sim_and_scat" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
 url: "https://pythoninchemistry.org" # the base hostname & protocol for your site, e.g. http://example.com
 
+google_analytics:
+  mytrackingcode: UA-77138846-4
 
 #######################################################################################
 # Jupyter Book settings

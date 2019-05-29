@@ -11,7 +11,7 @@ The resource is currently hosted at [pythoninchemistry.org/sim_and_scat](https:/
 The material within this OER is shared under a [CC BY 4.0 license](./content/LICENSE.md), while the jupyter-book software that is used to build the resource is shared under an [MIT license](./LICENSE.md)
 This means that anyone is free to copy and redistribute the material within the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
 Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
-Please use the references below (associated with the publication and the resource respectively), or download it has a [BibTeX file](./sim_and_scat.bib).
+Please use the references below (associated with the publication and the resource respectively).
 > McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. *J Appl. Crystallogr.* 2019, **52** (3). [10.1107/S1600576719004333](https://doi.org/10.1107/S1600576719004333)
 > 
 > McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. [10.5281/zenodo.2556824](https://doi.org/10.5281/zenodo.2556824)

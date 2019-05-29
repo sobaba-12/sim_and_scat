@@ -13,6 +13,7 @@ This means that anyone is free to copy and redistribute the material within the 
 Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
 Please use the references below (associated with the publication and the resource respectively), or download it has a [BibTeX file](./sim_and_scat.bib).
 > McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. *J Appl. Crystallogr.* 2019, **52** (3). [10.1107/S1600576719004333](https://doi.org/10.1107/S1600576719004333)
+> 
 > McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. [10.5281/zenodo.2556824](https://doi.org/10.5281/zenodo.2556824)
 
 ## Contributing to this resource

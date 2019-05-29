@@ -12,7 +12,7 @@ The material within this OER is shared under a [CC BY 4.0 license](./content/LIC
 This means that anyone is free to copy and redistribute the material within the resource in any medium or format and welcome to remix, transform, and build upon the material for any purpose, even commercially.
 Basically you can do whatever you want with it, although we would appreciate if you would reference the original resource if you use it.
 Please use the reference below, or download it has a [BibTeX file](./sim_and_scat.bib).
-> McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. 10.5281/zenodo.2556824
+> McCluskey, A. R.; Grant, J.; Symington, A. R.; Snow, T.; Doutch, J.; Morgan, B. J.; Parker, S. C.; Edler, K. J. [10.5281/zenodo.2556824](https://doi.org/10.5281/zenodo.2556824)
 
 ## Contributing to this resource
 

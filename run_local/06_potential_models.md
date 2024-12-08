@@ -1,1 +1,0 @@
-../content/classical_methods/potential_models.md
